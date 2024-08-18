@@ -1,0 +1,15 @@
+asgiref==3.8.1
+Django==5.0.7
+mysqlclient==2.1.0
+mysql-connector==2.2.9
+mysql-connector-python==9.0.0
+python-dotenv==1.0.1
+sqlparse==0.5.1
+# library to read from the .env file
+python-decouple==3.8
+pillow
+djangorestframework
+djangorestframework-simplejwt #JWT authentication
+dj-rest-auth
+drf-spectacular #generate api documentaion
+django-cors-headers

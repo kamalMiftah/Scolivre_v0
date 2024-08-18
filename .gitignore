@@ -1,0 +1,17 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.mysql
+media
+staticfiles
+
+# Environments
+.env
+venv/
+env/
+
+db.sqlite3
+
+schema.yml
