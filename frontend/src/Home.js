@@ -16,17 +16,17 @@ function Home() {
 
   return (
     <div>
-      <Nav />
 
       <div className="pattern-div">
       </div>
 
       <div className="container position-relative overflow-hidden">
         <div className="big-div p-4 mb-5 shadow d-flex flex-column align-items-center text-center">
+          <Nav />
           <p className="main-heading display-3 mt-5 pt-4 pb-0 mb-0">
             Ultra Big Heading Full Of Words
           </p>
-          <p className="second-heading display-7">
+          <p className="second-heading fs-4">
             Ultra Big Heading Full Of Words
           </p>
               <img
@@ -34,13 +34,66 @@ function Home() {
                 alt="Decorative Image"
                 className="responsive-image sm-75 md-50 lg-25 xl-25"
               />
-          <div className="form-container shadow p-4">
+          <div className="form-container shadow p-4 mb-5">
             <form id="my-form" className="m-2">
               <Form />
             </form>
           </div>
         </div>
       </div>
+
+
+<div className="second-section section">
+  <div className="container p-4">
+    <div className="div-section-2 pt-5 pb-5">
+      <div className="row justify-content-center">
+        <div className="col-12 col-lg-3 div-features-css">
+          <p className="second-section-heading display-3 overflow-visible lh-1">
+            Service
+            <br/> 
+            Features
+          </p>
+        <div className="second-section-line pb-3">
+        </div>
+        </div>
+        <div className="col-9 col-md-9 second-section-features shadow px-5 py-5">
+          <div className="mx-auto row justify-content-center">
+            <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
+              <img
+                src="images/customer-service-agent_3847874.png"
+                alt="Icon"
+                className="img-fluid w-25"
+              />
+              <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
+              Feature<br/>Name
+              </p>
+            </div>
+            <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
+              <img
+                src="images/review_3847651.png"
+                alt="Icon"
+                className="img-fluid w-25"
+              />
+              <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
+                Feature<br/>Name
+              </p>
+            </div>
+            <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
+              <img
+                src="images/cash-on-delivery_3847810.png"
+                alt="Icon"
+                className="img-fluid w-25"
+              />
+              <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
+                Feature<br/>Name
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section className="second-section py-5 py-xl-8 with-background">
   <div className="container text-center">
@@ -84,22 +137,6 @@ function Home() {
 </section>
 
 
-
-    <section className="comment-ca-marche d-flex align-items-center py-5">
-      <div className="instructions">
-        <h2>COMMENT CA MARCHE ?</h2>
-        <ol>
-          <li>Prenez en photo votre/vos liste(s) de fournitures scolaires</li>
-          <li>Remplissez votre nom et votre numéro de téléphone</li>
-          <li>Cliquez sur joindre votre liste et sélectionnez la/les liste(s)</li>
-          <li>Cliquez sur envoyer</li>
-        </ol>
-        <p><strong>N.B:</strong> Si vous avez plus d'un enfant, merci de joindre toutes les listes en même temps.</p>
-      </div>
-      <div className="icon-container">
-        <i className="icon fas fa-camera"></i> {/* Replace with your icon */}
-      </div>
-    </section>
 
 
     <section class="testimonials py-5">

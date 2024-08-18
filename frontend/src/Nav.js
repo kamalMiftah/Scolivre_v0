@@ -2,8 +2,9 @@ import React from 'react';
 
 function Nav() {
   return (
-      <nav className="navbar navbar-expand-lg navbar-dark shadow fixed-top w-50">
-        <div className="container justify-content-center">
+      <nav className="navbar navbar-expand-lg navbar-dark shadow w-100 m-0">
+        <div className="container justify-content-between">
+        <a class="navbar-brand p-0 mx-4" href="#">Navbar</a>
 
           <button
             className="navbar-toggler w-50 py-0"
@@ -16,8 +17,8 @@ function Nav() {
 
             <i className="fas fa-bars"></i>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav mx-auto align-items-center">
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul className="navbar-nav align-items-center">
               <li className="nav-item">
                 <a className="btn btn-secondary nav-link active menu-button py-1" href="#">
                   Home
