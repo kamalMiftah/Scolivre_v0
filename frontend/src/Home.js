@@ -27,7 +27,7 @@ function Home() {
             Ultra Big Heading Full Of Words
           </p>
           <p className="second-heading fs-4">
-            Ultra Big Heading Full Of Words
+            Ultra Big Heading Full Of Much More Wording
           </p>
               <img
                 src="images/340619-PAIHI0-347.png"
@@ -45,18 +45,17 @@ function Home() {
 
 <div className="second-section section">
   <div className="container p-4">
-    <div className="div-section-2 pt-5 pb-5">
+    <div className="div-section-2 py-5 my-5">
       <div className="row justify-content-center">
-        <div className="col-12 col-lg-3 div-features-css">
+        <div className="col-12 col-lg-4 div-features-css">
           <p className="second-section-heading display-3 overflow-visible lh-1">
             Service
             <br/> 
             Features
           </p>
-        <div className="second-section-line pb-3">
+        <div className="second-section-line pb-3"></div>
         </div>
-        </div>
-        <div className="col-9 col-md-9 second-section-features shadow px-5 py-5">
+        <div className="col-9 col-md-8 second-section-features shadow px-4 py-5">
           <div className="mx-auto row justify-content-center">
             <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
               <img
@@ -65,7 +64,7 @@ function Home() {
                 className="img-fluid w-25"
               />
               <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
-              Feature<br/>Name
+              Feature Name
               </p>
             </div>
             <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
@@ -75,7 +74,7 @@ function Home() {
                 className="img-fluid w-25"
               />
               <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
-                Feature<br/>Name
+                Feature Name
               </p>
             </div>
             <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
@@ -85,93 +84,90 @@ function Home() {
                 className="img-fluid w-25"
               />
               <p className="second-section-feature fs-4 lh-sm m-0 mt-2">
-                Feature<br/>Name
+                Feature Name
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div className="div-section-2 py-5 my-5">
+      <div className="row justify-content-center">
+
+        <div className="col-12 col-lg-5 order-1 order-lg-2 div-features-css">
+          <p className="second-section-heading2 display-3 overflow-visible lh-1">
+            Some Service
+            <br/> 
+            Features
+          </p>
+        <div className="second-section-line second-section-line2 pb-3 ms-auto">
+        </div>
+        </div>
+
+        <div className="col-12 col-lg-7 order-2 order-lg-1 second-section-features shadow px-5 py-5">
+          <div className="mx-auto row justify-content-center">
+            <p className="second-section-feature-text lh-sm fs-5 my-3">
+              <span className="d-inline-flex align-items-center">
+                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+            </p>
+            <p className="second-section-feature-text lh-sm fs-5 my-3">
+              <span className="d-inline-flex align-items-center">
+                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+            </p>
+            <p className="second-section-feature-text lh-sm fs-5 my-3">
+              <span className="d-inline-flex align-items-center">
+                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div className="div-section-2 py-5 my-5">
+      <div className="row justify-content-center">
+
+        <div className="col-12 col-lg-5 div-features-css">
+          <p className="second-section-heading display-3 overflow-visible lh-1">
+            User
+            <br/> 
+            Review
+          </p>
+        <div className="second-section-line pb-3">
+        </div>
+        </div>
+
+        <div className="col-12 col-lg-7 second-section-features shadow px-5 py-5">
+          <div className="mx-auto row justify-content-center">
+            <blockquote class="blockquote mb-4">
+              <p className="second-section-feature-text">
+                <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
+                <span className="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
+                  minus facere, molestias quisquam impedit inventore.</span>
+              </p>
+            </blockquote>
+            <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
+                  Miranda Smith in <cite title="Source Title">The Guardian</cite>
+            </figcaption>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </div>
 
-<section className="second-section py-5 py-xl-8 with-background">
-  <div className="container text-center">
-    <h2 className="display-5 mb-4">Our Features</h2>
-    <p className="mb-4">
-      Discover the amazing features we offer to make your experience better.
-    </p>
-
-    <div className="row gy-5 justify-content-center">
-      <div className="col-12 col-sm-6 col-lg-4 text-center">
-        <div className="d-flex justify-content-center align-items-center mb-3">
-          <i className="fas fa-credit-card fa-3x"></i>
-        </div>
-        <h5 className="mb-2">Secure Payments</h5>
-        <p className="m-0">
-          Your transactions are safe with our secure payment methods.
-        </p>
-      </div>
-
-      <div className="col-12 col-sm-6 col-lg-4 text-center">
-        <div className="d-flex justify-content-center align-items-center mb-3">
-          <i className="fas fa-trophy fa-3x"></i>
-        </div>
-        <h5 className="mb-2">Top Quality</h5>
-        <p className="m-0">
-          We provide only the best quality products for you.
-        </p>
-      </div>
-
-      <div className="col-12 col-sm-6 col-lg-4 text-center">
-        <div className="d-flex justify-content-center align-items-center mb-3">
-          <i className="fas fa-box-open fa-3x"></i> 
-        </div>
-        <h5 className="mb-2">Fast Delivery</h5>
-        <p className="m-0">
-          Get your orders delivered quickly and efficiently.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-    <section class="testimonials py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"This product has changed my life! Highly recommended."</p>
-                            <h5 class="card-title">John Doe</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">CEO, Company</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"Amazing service and support. I will definitely come back."</p>
-                            <h5 class="card-title">Jane Smith</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Marketing Director</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"A top-notch experience from start to finish. Great job!"</p>
-                            <h5 class="card-title">Alice Johnson</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Freelancer</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     </div>

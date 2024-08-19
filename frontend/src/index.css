@@ -42,7 +42,9 @@ body, html {
   background: linear-gradient(
     to bottom,
     #ffd380, /* Top color */
-    rgba(255, 251, 243, 0.85) /* Bottom color with 70% opacity */
+    #ffeac2,
+    #fff2db,
+    rgba(255, 251, 243, 0.9) /* Bottom color with 70% opacity */
   );
 }
 
@@ -54,7 +56,7 @@ body, html {
 }
 
 .big-div .second-heading {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   text-align: center;
   color: #030201;
@@ -145,7 +147,8 @@ body, html {
   background-color: #3f5983 !important;
 }
 
-.menu-button {
+.navbar-toggler, .menu-button {
+  border: 0 !important;
   background-color: unset !important;
   font-family: "Open Sans Condensed" !important;
   font-weight: 700 !important;
@@ -159,10 +162,6 @@ body, html {
   color: #030201 !important;
 }
 
-.navbar-toggler {
-  height: 32px;
-}
-
 .menu-button:hover {
   background-color: #9e824d !important;
   color: #030201 !important;
@@ -174,6 +173,7 @@ body, html {
   background-color: #e8ebf1 !important;
   color: #0a1629 !important;
   border-color: #bbc5d5 !important;
+  border-radius: 24px !important;
 }
 
 .form-control:focus {
@@ -187,6 +187,7 @@ body, html {
   font-weight: 700 !important;
   background-color: #2c4875 !important;
   color: #e8ebf1 !important;
+  border-radius: 24px !important;
 }
 
 .form-button:hover {
@@ -199,6 +200,7 @@ body, html {
   background-color: #8a508f !important;
   border: 0 !important;
   color: #f3edf4 !important;
+  border-radius: 24px !important;
 }
 
 .submit-button:hover {
@@ -209,7 +211,7 @@ body, html {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  border-radius: 0 .375rem .375rem 0;
+  border-radius: 0 24px 24px 0 !important;
   text-align: left !important;
 }
 
@@ -218,32 +220,47 @@ body, html {
   font-weight: 400 !important;
   background-color: #d1d8e3 !important;
   border-color: #bbc5d5 !important;
+  border-radius: 24px 0 0 24px !important;
 }
 
 .second-section {
   background: linear-gradient(
     to bottom,
-    rgba(144, 160, 185, 1), /* Top color #90a0b9 with 90% opacity */
-    rgba(82, 106, 144, 1)  /* Bottom color #526a90 with 85% opacity */
+    #7b8eac,
+    #3f5983
   );
 }
 
 .second-section-features {
   border-radius: 24px;
-  background-color: #bbc5d5;
+  background-color: #d1d8e3;
 }
 
 
-.second-section-heading {
+.second-section-heading, .second-section-heading2 {
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700 !important;
-  color: #000001;
+  color: #d1d8e3;
 }
 
 .second-section-feature {
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 500 !important;
-  color: #000001;
+  color: #140715;
+}
+
+.second-section-feature-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500 !important;
+  color: #140715 !important;
+}
+
+.second-section-feature-text-mini {
+  color: #8a508f !important;
+}
+
+.icon-color-section2-2 {
+  color: #8a508f;
 }
 
 @media (max-width:992px)
@@ -251,7 +268,7 @@ body, html {
   .navbar-nav {
     flex-direction: row;
     gap: 0.5rem !important;
-    margin-top: 0.5rem !important;
+    margin-top: 0.5rem second-section-heading!important;
   }
   .nav-item {
     width: 50%;
@@ -259,7 +276,9 @@ body, html {
   .form-container {
     width: 100%;
   }
-  .second-section-heading {
+  .second-section-heading, .second-section-heading2 {
+    text-align: center;
+    margin-bottom: 5rem !important;
   }
   .div-features-css {
     z-index: 1;
@@ -267,10 +286,14 @@ body, html {
   .second-section-line {
     width: 30%;
     background-color: #bbc5d5;
-    transform: translate(0%, -7rem);
+    background: linear-gradient(to right, #d1d8e3, rgba(209, 216, 227, 0));
+    transform: translate(0, -3rem);
     border-radius: 24px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .second-section-line2 {
+    background: linear-gradient(to left, #d1d8e3, rgba(209, 216, 227, 0));
   }
 }
 
@@ -286,7 +309,11 @@ body, html {
   .form-container {
     width: 40%;
   }
-  .second-section-heading {
+  .second-section-heading, .second-section-heading2 {
+    margin-bottom: -1rem !important;
+  }
+  .second-section-heading2 {
+    text-align: right;
   }
   .div-features-css {
     z-index: 1;
@@ -294,8 +321,12 @@ body, html {
   .second-section-line {
     width: 70%;
     transform: translate(0%, 3rem);
-    background-color: #bbc5d5;
     border-radius: 24px;
+    background: linear-gradient(to right, #d1d8e3, rgba(209, 216, 227, 0));
+  }
+
+  .second-section-line2 {
+    background: linear-gradient(to left, #d1d8e3, rgba(209, 216, 227, 0));
   }
 }
 

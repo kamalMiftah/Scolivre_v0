@@ -7,7 +7,7 @@ function Nav() {
         <a class="navbar-brand p-0 mx-4" href="#">Navbar</a>
 
           <button
-            className="navbar-toggler w-50 py-0"
+            className="navbar-toggler py-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -15,7 +15,7 @@ function Nav() {
             aria-expanded="false"
             aria-label="Toggle navigation">
 
-            <i className="fas fa-bars"></i>
+            <i className="fas fa-bars fa-lg"></i>
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav align-items-center">
