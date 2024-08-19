@@ -49,21 +49,18 @@ body, html {
 }
 
 .big-div .main-heading {
-  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
   text-align: center;
   color: #030201;
 }
 
 .big-div .second-heading {
-  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   text-align: center;
   color: #030201;
 }
 
 .third-heading {
-  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700 !important;
 }
 
@@ -92,7 +89,6 @@ body, html {
   padding: 0 20px;
   color: #ABC4FF;
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   background-color: #333533;
   outline: none;
@@ -105,7 +101,6 @@ body, html {
   padding: 0 20px;
   color: #ABC4FF;
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   background-color: #333533;
   outline: none;
@@ -128,7 +123,6 @@ body, html {
   height: 150px;
   margin: 0;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   display: flex;              /* Enable Flexbox */
   align-items: center;        /* Vertically center text */
@@ -150,14 +144,12 @@ body, html {
 .navbar-toggler, .menu-button {
   border: 0 !important;
   background-color: unset !important;
-  font-family: "Open Sans Condensed" !important;
   font-weight: 700 !important;
   color: #030201 !important;
   border-radius: 24px !important;
 }
 
 .navbar-brand {
-  font-family: "Open Sans Condensed" !important;
   font-weight: 700 !important;
   color: #030201 !important;
 }
@@ -168,7 +160,6 @@ body, html {
 }
 
 .form-control {
-  font-family: "Open Sans" !important;
   font-weight: 400 !important;
   background-color: #e8ebf1 !important;
   color: #0a1629 !important;
@@ -183,7 +174,6 @@ body, html {
 
 .form-button {
   border: 0 !important;
-  font-family: "Open Sans Condensed" !important;
   font-weight: 700 !important;
   background-color: #2c4875 !important;
   color: #e8ebf1 !important;
@@ -195,7 +185,6 @@ body, html {
 }
 
 .submit-button {
-  font-family: "Open Sans Condensed" !important;
   font-weight: 700 !important;
   background-color: #8a508f !important;
   border: 0 !important;
@@ -216,7 +205,6 @@ body, html {
 }
 
 .input-group-text {
-  font-family: "Open Sans" !important;
   font-weight: 400 !important;
   background-color: #d1d8e3 !important;
   border-color: #bbc5d5 !important;
@@ -238,19 +226,16 @@ body, html {
 
 
 .second-section-heading, .second-section-heading2 {
-  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700 !important;
   color: #d1d8e3;
 }
 
 .second-section-feature {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 500 !important;
+  font-weight: 300 !important;
   color: #140715;
 }
 
 .second-section-feature-text {
-  font-family: "Open Sans", sans-serif;
   font-weight: 500 !important;
   color: #140715 !important;
 }
