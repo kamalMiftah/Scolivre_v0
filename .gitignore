@@ -11,6 +11,7 @@ staticfiles
 .env
 venv/
 env/
+.vscode
 
 db.sqlite3
 
