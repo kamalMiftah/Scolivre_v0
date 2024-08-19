@@ -22,7 +22,7 @@ function Home() {
       <div className="container position-relative overflow-hidden">
         <div className="big-div p-4 mb-5 shadow d-flex flex-column align-items-center text-center">
           <Nav />
-          <p className="main-heading display-3 mt-5 pt-4 pb-0 mb-0">
+          <p className="main-heading display-3 mt-5 pt-4 pb-0 mb-0 mx-4">
             Ultra Big Heading Full Of Words
           </p>
           <p className="second-heading fs-4">
@@ -108,19 +108,19 @@ function Home() {
           <div className="mx-auto row justify-content-center">
             <p className="second-section-feature-text lh-sm fs-5 my-3">
               <span className="d-inline-flex align-items-center">
-                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </p>
             <p className="second-section-feature-text lh-sm fs-5 my-3">
               <span className="d-inline-flex align-items-center">
-                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </p>
             <p className="second-section-feature-text lh-sm fs-5 my-3">
               <span className="d-inline-flex align-items-center">
-                <i className="icon-color-section2-2 fas fa-check-circle fa-xs me-3"></i>
+                <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </p>
@@ -143,23 +143,51 @@ function Home() {
         </div>
         </div>
 
-        <div className="col-12 col-lg-7 second-section-features shadow px-5 py-5">
-          <div className="mx-auto row justify-content-center">
-            <blockquote class="blockquote mb-4">
-              <p className="second-section-feature-text">
-                <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
-                <span className="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
-                  minus facere, molestias quisquam impedit inventore.</span>
-              </p>
-            </blockquote>
-            <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
-                  Miranda Smith in <cite title="Source Title">The Guardian</cite>
-            </figcaption>
-          </div>
-
-
+<div className="col-12 col-lg-7 second-section-features shadow px-5 py-5">
+  <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+    <div className="carousel-inner">
+      <div className="carousel-item active">
+        <div className="mx-auto row justify-content-center">
+          <blockquote className="blockquote mb-4">
+            <p className="second-section-feature-text">
+              <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
+              <span className="font-italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt minus facere.
+              </span>
+            </p>
+          </blockquote>
+          <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
+            Miranda Smith in <cite title="Source Title">The Guardian</cite>
+          </figcaption>
         </div>
+      </div>
+      <div className="carousel-item">
+        <div className="mx-auto row justify-content-center">
+          <blockquote className="blockquote mb-4">
+            <p className="second-section-feature-text">
+              <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
+              <span className="font-italic">
+                Another example of carousel item content, this content is great for showing the user review, we need to add more text.
+              </span>
+            </p>
+          </blockquote>
+          <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
+            Another Author in <cite title="Source Title">Another Source</cite>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <i className="fas fa-chevron-left" aria-hidden="true"></i>
+      <span className="visually-hidden">Previous</span>
+    </button>
+    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <i className="fas fa-chevron-right" aria-hidden="true"></i>
+      <span className="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
 
       </div>
     </div>
