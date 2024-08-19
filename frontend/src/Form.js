@@ -47,6 +47,7 @@ class Form extends React.Component {
 
   nextformpart = (event) => {
     event.preventDefault();
+    const phoneRegex = /^0[5-7][0-9]{8}$/;
 
     let nextAnimation = () => {
         const tl = gsap.timeline({
@@ -86,7 +87,7 @@ class Form extends React.Component {
       if (this.state.name.length === 0) {
         errors['name'] = 'Name is required'; // Set error message
       }
-      if (this.state.phone.length === 0) {
+      if (this.state.phone.length === 0 || !phoneRegex.test(this.state.phone)) {
         errors['phone'] = 'Phone is required'; // Set error message
       }
       if (Object.keys(errors).length > 0) {
