@@ -198,6 +198,20 @@ class Form extends React.Component {
     }
   };
 
+  handleKeyPress = (e) => {
+    // Handle Enter key
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent default Enter behavior (like form submission)
+      this.nextformpart();
+    }
+    
+    // Handle Backspace key
+    if (e.key === 'Backspace') {
+      e.preventDefault(); // Prevent default Backspace behavior (like deleting text)
+      this.prevformpart();
+    }
+  };
+
   render() {
     if (this.state.currentStep === 1) {
       return (
@@ -229,7 +243,7 @@ class Form extends React.Component {
           </div>
           <div className="d-flex justify-content-between">
             <button
-        onClick={this.nextformpart}
+              onClick={this.nextformpart}
               className="btn w-100 form-button btn-primary">
               Next
             </button>
@@ -282,14 +296,14 @@ class Form extends React.Component {
         <div className="form-content">
           <div className="mb-3">
             <input
-              className="form-control"
+              className="comment-form form-control"
               type="text"
               id="comment"
               name="comment"
               value={this.state.comment}
               onChange={this.handleChange}
               placeholder="Comment"
-              required
+              rows="3"
             />
           </div>
           <div className="mb-3">
