@@ -13,6 +13,6 @@ venv/
 env/
 .vscode
 
-db.sqlite3
-
 schema.yml
+lists
+migrations
