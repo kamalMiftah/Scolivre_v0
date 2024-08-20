@@ -36,7 +36,6 @@ html {
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    background: linear-gradient(to top, #fffbf3, #ffd380);
     position: relative;
     text-align: center;
     border-radius: 24px;
@@ -61,6 +60,43 @@ html {
     color: #030201;
 }
 
+.about-big-div {
+    flex: 1;
+    margin-top: 40px;
+    border-radius: 24px;
+    background: linear-gradient(
+        to bottom,
+        #ffd380,
+        /* Top color */ #ffeac2,
+        #fff2db,
+        rgba(255, 251, 243, 0.9) /* Bottom color with 70% opacity */
+    );
+}
+
+.about-big-div .about-heading {
+    font-weight: 700;
+    text-align: left;
+    color: #030201;
+}
+
+.about-img-1 {
+    border-radius: 24px;
+    max-height: 15rem; /* Set your desired max-height */
+    width: 100%; /* Maintain aspect ratio */
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white; /* Text color */
+    padding: 10px; /* Optional: padding for better readability */
+    border-radius: 5px; /* Optional: rounded corners */
+    text-align: center; /* Center text */
+}
+
 .third-heading {
     font-weight: 700 !important;
 }
@@ -75,6 +111,12 @@ html {
     position: relative;
     text-align: center;
     margin-top: -2.5rem;
+    background-color: #fffbf3;
+}
+
+.about-container {
+    border-radius: 27px;
+    background: white;
     background-color: #fffbf3;
 }
 

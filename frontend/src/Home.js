@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Form from "./Form";
 import Nav from "./Nav";
-import "./index.css";
 import { animateElements } from "./gsapAnimations";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
