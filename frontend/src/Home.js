@@ -142,9 +142,7 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-5 div-features-css">
                 <p className="second-section-heading display-3 overflow-visible lh-1">
-                  User
-                  <br />
-                  Review
+                  Avis de Nos Clients
                 </p>
                 <div className="second-section-line pb-3"></div>
               </div>
@@ -162,15 +160,14 @@ function Home() {
                           <p className="second-section-feature-text">
                             <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
                             <span className="font-italic">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Pariatur sint nesciunt ad itaque aperiam
-                              expedita officiis incidunt minus facere.
+                              Excellent service ! Les fournitures sont de très
+                              bonne qualité, et la livraison est rapide. Je
+                              recommande vivement !
                             </span>
                           </p>
                         </blockquote>
                         <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
-                          Miranda Smith in{" "}
-                          <cite title="Source Title">The Guardian</cite>
+                          Amina
                         </figcaption>
                       </div>
                     </div>
@@ -180,15 +177,14 @@ function Home() {
                           <p className="second-section-feature-text">
                             <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
                             <span className="font-italic">
-                              Another example of carousel item content, this
-                              content is great for showing the user review, we
-                              need to add more text.
+                              Super expérience ! Le support client est réactif,
+                              et j'ai pu payer à la livraison. Je suis très
+                              satisfait.
                             </span>
                           </p>
                         </blockquote>
                         <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
-                          Another Author in{" "}
-                          <cite title="Source Title">Another Source</cite>
+                          Jalal
                         </figcaption>
                       </div>
                     </div>
