@@ -13,17 +13,17 @@ function Home() {
       <div className="container position-relative overflow-hidden">
         <div className="about-big-div p-4 mb-5 shadow d-flex flex-column">
           <Nav />
-          <div className="row mt-5 mx-5">
-            <div className="about-1 col-12 text-left px-4 mb-4">
+          <div className="row pt-4 mt-5">
+            <div className="about-1 col-12 text-left px-4">
               <img
-                src="images/cash-macanaya-MtcBG4y3JJ8-unsplash.jpg"
+                src="images/ecole.jpeg"
                 alt=""
                 className="about-img-1 shadow img-fluid mb-4"
               />
             </div>
-            <div className="about-2 col-12 text-left px-4 mb-4">
-              <p className="about-heading display-3 text-left">
-                A Propos de Nous
+            <div className="about-2 col-12 text-left px-4 mb-0">
+              <p className="about-heading display-5 text-left pt-4">
+                À Propos de Nous
               </p>
 
               <div className="about-container shadow px-5 py-4 my-4">
@@ -35,9 +35,13 @@ function Home() {
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="about-3 col-12 col-lg-12 text-left px-4">
-              <p className="about-heading display-3 text-left">Notre Mission</p>
+          <div className="row pt-0">
+            <div className="about-1 order-2 order-lg-1 col-12 col-lg-6 text-left px-4 mb-4">
+              <p className="about-heading display-5 text-left pt-4">
+                Notre Mission
+              </p>
 
               <div className="about-container shadow px-5 py-4 my-4">
                 <p className="second-section-feature-text lh-sm fs-5 my-3">
@@ -47,6 +51,22 @@ function Home() {
                   enfant mérite le meilleur départ possible pour l'année
                   scolaire, et nous nous engageons à fournir des produits de
                   qualité qui répondent à tous leurs besoins.
+                </p>
+              </div>
+            </div>
+            <div className="about-2 order-1 order-lg-2 col-12 col-lg-6 text-left px-4">
+              <p className="about-heading display-5 text-left pt-4">
+                Notre Histoire
+              </p>
+
+              <div className="about-container shadow px-5 py-4 my-4">
+                <p className="second-section-feature-text lh-sm fs-5 my-3">
+                  Fondé en 2024, notre entreprise a été créée par une équipe de
+                  parents et d'éducateurs qui comprenaient les défis de la
+                  préparation scolaire. Nous avons décidé de mettre notre
+                  expertise et notre passion au service des familles en créant
+                  une solution simple et efficace pour obtenir tout le
+                  nécessaire pour la rentrée.
                 </p>
               </div>
             </div>
@@ -60,9 +80,7 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-4 div-features-css">
                 <p className="second-section-heading display-3 overflow-visible lh-1">
-                  Service
-                  <br />
-                  Features
+                  Pourquoi Choisir Notre Service ?
                 </p>
                 <div className="second-section-line pb-3"></div>
               </div>
@@ -74,8 +92,13 @@ function Home() {
                       alt="Icon"
                       className="img-fluid w-25"
                     />
-                    <p className="second-section-feature fs-5 lh-sm m-0 mt-2">
-                      Feature Name
+                    <p className="second-section-feature fs-5 lh-sm m-0 my-2">
+                      Service Client
+                    </p>
+                    <p className="about-small-text">
+                      Notre équipe est toujours prête à vous aider et à répondre
+                      à toutes vos questions pour garantir votre entière
+                      satisfaction.
                     </p>
                   </div>
                   <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
@@ -84,8 +107,13 @@ function Home() {
                       alt="Icon"
                       className="img-fluid w-25"
                     />
-                    <p className="second-section-feature fs-5 lh-sm m-0 mt-2">
-                      Feature Name
+
+                    <p className="second-section-feature fs-5 lh-sm m-0 my-2">
+                      Qualité et Sélection
+                    </p>
+                    <p className="about-small-text">
+                      Nous proposons une gamme variée de fournitures scolaires
+                      de qualité, sélectionnées pour chaque niveau.
                     </p>
                   </div>
                   <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
@@ -94,124 +122,14 @@ function Home() {
                       alt="Icon"
                       className="img-fluid w-25"
                     />
-                    <p className="second-section-feature fs-5 lh-sm m-0 mt-2">
-                      Feature Name
+                    <p className="second-section-feature fs-5 lh-sm m-0 my-2">
+                      Commodité
+                    </p>
+                    <p className="about-small-text">
+                      Commandez en ligne et recevez vos fournitures directement
+                      à votre domicile, sans stress ni tracas.
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="div-section-2 pb-5 my-5">
-            <div className="row justify-content-center">
-              <div className="col-12 col-lg-5 order-1 order-lg-2 div-features-css">
-                <p className="second-section-heading2 display-3 overflow-visible lh-1">
-                  Some Service
-                  <br />
-                  Features
-                </p>
-                <div className="second-section-line second-section-line2 pb-3 ms-auto"></div>
-              </div>
-
-              <div className="col-12 col-lg-7 order-2 order-lg-1 second-section-features shadow px-5 py-5">
-                <div className="mx-auto row justify-content-center">
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
-                    <span className="d-inline-flex align-items-center">
-                      <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                  </p>
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
-                    <span className="d-inline-flex align-items-center">
-                      <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                  </p>
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
-                    <span className="d-inline-flex align-items-center">
-                      <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="div-section-2 pb-5 my-5">
-            <div className="row justify-content-center">
-              <div className="col-12 col-lg-5 div-features-css">
-                <p className="second-section-heading display-3 overflow-visible lh-1">
-                  User
-                  <br />
-                  Review
-                </p>
-                <div className="second-section-line pb-3"></div>
-              </div>
-
-              <div className="col-12 col-lg-7 second-section-features shadow px-5 py-5">
-                <div
-                  id="carouselExampleControls"
-                  className="carousel slide"
-                  data-bs-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <div className="mx-auto row justify-content-center">
-                        <blockquote className="blockquote mb-4">
-                          <p className="second-section-feature-text">
-                            <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
-                            <span className="font-italic">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Pariatur sint nesciunt ad itaque aperiam
-                              expedita officiis incidunt minus facere.
-                            </span>
-                          </p>
-                        </blockquote>
-                        <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
-                          Miranda Smith in{" "}
-                          <cite title="Source Title">The Guardian</cite>
-                        </figcaption>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <div className="mx-auto row justify-content-center">
-                        <blockquote className="blockquote mb-4">
-                          <p className="second-section-feature-text">
-                            <i className="icon-color-section2-2 fas fa-quote-left fa-lg me-3"></i>
-                            <span className="font-italic">
-                              Another example of carousel item content, this
-                              content is great for showing the user review, we
-                              need to add more text.
-                            </span>
-                          </p>
-                        </blockquote>
-                        <figcaption className="second-section-feature-text-mini blockquote-footer mb-0">
-                          Another Author in{" "}
-                          <cite title="Source Title">Another Source</cite>
-                        </figcaption>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev"
-                  >
-                    <i className="fas fa-chevron-left" aria-hidden="true"></i>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next"
-                  >
-                    <i className="fas fa-chevron-right" aria-hidden="true"></i>
-                    <span className="visually-hidden">Next</span>
-                  </button>
                 </div>
               </div>
             </div>

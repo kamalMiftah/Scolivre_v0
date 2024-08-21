@@ -19,20 +19,20 @@ function Home() {
       <div className="container position-relative overflow-hidden">
         <div className="big-div p-4 mb-5 shadow d-flex flex-column align-items-center text-center">
           <Nav />
-          <p className="main-heading display-3 mt-5 pt-4 pb-0 mb-0 mx-4">
-            Préparez la rentrée sans stress ! Commandez, nous livrons, vos
-            enfants sont prêts.
+          <p className="main-heading display-5 mt-4 pt-3 pb-0 mb-0 mx-4">
+            Préparez la rentrée facilement !<br /> Commandez, nous livrons.
           </p>
-          <p className="second-heading fs-4">
+          <p className="second-heading fs-5 pt-3">
             Remplissez le formulaire ci-dessous avec la liste des fournitures
-            nécessaires, et nous nous occupons du reste.
+            nécessaires, <br />
+            et nous nous occupons du reste.
           </p>
           <img
             src="images/340619-PAIHI0-347.png"
             alt=""
             className="responsive-image sm-75 md-50 lg-25 xl-25"
           />
-          <div className="form-container shadow p-4 mb-5">
+          <div className="form-container shadow p-4 mb-4">
             <form id="my-form" className="m-2">
               <Form />
             </form>
@@ -69,7 +69,7 @@ function Home() {
                       className="img-fluid w-25"
                     />
                     <p className="second-section-feature fs-5 lh-sm m-0 mt-2">
-                      Des fournitures scolaires soigneusement choisies.
+                      Des outils scolaires sélectionnés avec soin.
                     </p>
                   </div>
                   <div className="col-12 col-sm-12 col-md-9 col-lg-4 text-center my-4">
@@ -79,7 +79,7 @@ function Home() {
                       className="img-fluid w-25"
                     />
                     <p className="second-section-feature fs-5 lh-sm m-0 mt-2">
-                      Payez uniquement à la réception.
+                      Payez uniquement lors de la réception.
                     </p>
                   </div>
                 </div>
@@ -91,47 +91,56 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-5 order-1 order-lg-2 div-features-css">
                 <p className="second-section-heading2 display-3 overflow-visible lh-1">
-                  Comment Passer Votre Commande ?
+                  Comment <br />
+                  Passer Votre Commande?
                 </p>
                 <div className="second-section-line second-section-line2 pb-3 ms-auto"></div>
               </div>
 
               <div className="col-12 col-lg-7 order-2 order-lg-1 second-section-features shadow px-5 py-5">
                 <div className="mx-auto row justify-content-center">
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
+                  <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Remplissez Vos Informations de Livraison:
-                      <br /> Commencez par saisir votre nom, numéro de téléphone
-                      , ville et adresse pour que nous puissions livrer les
-                      fournitures à la bonne adresse.{" "}
+                      Remplissez Vos Informations de Livraison:{" "}
                     </span>
                   </p>
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
+                  <p className="second-section-feature-text fs-6">
+                    Commencez par saisir votre nom, numéro de téléphone , ville
+                    et adresse pour que nous puissions livrer les fournitures à
+                    la bonne adresse.{" "}
+                  </p>
+                  <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Ajoutez des Détails Supplémentaires : <br />
-                      Indiquez toute information spéciale concernant la
-                      livraison ou les fournitures dans la section commentaires.
+                      Ajoutez des Détails Supplémentaires:
                     </span>
                   </p>
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
+                  <p className="second-section-feature-text fs-6">
+                    Indiquez toute information spéciale concernant la livraison
+                    ou les fournitures dans la section commentaires.
+                  </p>
+                  <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Téléchargez la Photo des Fournitures : <br />
-                      Dans la dernière étape, prenez une photo claire des
-                      fournitures scolaires dont votre enfant a besoin et
-                      téléchargez-la dans le formulaire.
+                      Téléchargez la Photo des Fournitures:
                     </span>
                   </p>
-                  <p className="second-section-feature-text lh-sm fs-5 my-3">
+                  <p className="second-section-feature-text fs-6">
+                    Dans la dernière étape, prenez une photo claire des
+                    fournitures scolaires dont votre enfant a besoin et
+                    téléchargez-la dans le formulaire.
+                  </p>
+                  <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Soumettez Votre Commande : <br />
-                      Une fois toutes les informations complétées et la photo
-                      téléchargée, cliquez sur "Envoyer". Nous nous occupons du
-                      reste et livrerons les fournitures directement chez vous.
+                      Soumettez Votre Commande:
                     </span>
+                  </p>
+                  <p className="second-section-feature-text fs-6">
+                    Une fois toutes les informations complétées et la photo
+                    téléchargée, cliquez sur "Envoyer". Nous nous occupons du
+                    reste et livrerons les fournitures directement chez vous.
                   </p>
                 </div>
               </div>

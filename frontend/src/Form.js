@@ -48,53 +48,57 @@ class Form extends React.Component {
   nextformpart = (event) => {
     event.preventDefault();
     const phoneRegex = /^0[5-7][0-9]{8}$/;
+    this.setState((prevState) => ({
+      errors: {}, // Use a colon to assign the empty object
+    }));
 
     let nextAnimation = () => {
-        const tl = gsap.timeline({
-          onComplete: () => {
-            this.setState(oldState => ({
-              currentStep: oldState.currentStep + 1,
-            }));
-            gsap.fromTo(
-              ".form-content *",
-              {
-                x: "20", // Start from the right side
-                opacity: 0,
-              },
-              {
-                x: "0",
-                opacity: 1,
-                duration: 0.1,
-                stagger: 0.0,
-                ease: "power1.out",
-              }
-            );
-          },
-        });
+      const tl = gsap.timeline({
+        onComplete: () => {
+          this.setState((oldState) => ({
+            currentStep: oldState.currentStep + 1,
+          }));
+          gsap.fromTo(
+            ".form-content *",
+            {
+              x: "20", // Start from the right side
+              opacity: 0,
+            },
+            {
+              x: "0",
+              opacity: 1,
+              duration: 0.1,
+              stagger: 0.0,
+              ease: "power1.out",
+            },
+          );
+        },
+      });
 
-        tl.to(".form-content *", {
-          x: -20,
-          opacity: 0,
-          duration: 0.1,
-          stagger: 0.0,
-          ease: "power1.inOut",
-        });
+      tl.to(".form-content *", {
+        x: -20,
+        opacity: 0,
+        duration: 0.1,
+        stagger: 0.0,
+        ease: "power1.inOut",
+      });
     };
 
     if (this.state.currentStep === 1) {
       const errors = {}; // Create a new errors object
 
       if (this.state.name.length === 0) {
-        errors['name'] = 'Name is required'; // Set error message
+        errors["name"] = "Full Name is required"; // Set error message
       }
-      if (this.state.phone.length === 0 || !phoneRegex.test(this.state.phone)) {
-        errors['phone'] = 'Phone is required'; // Set error message
+      console.log(this.state.phone.length);
+      if (this.state.phone.length === 0) {
+        errors["phone"] = "Phone Number is required"; // Set error message
+      } else if (!phoneRegex.test(this.state.phone)) {
+        errors["phone"] = "Phone number is incorrect"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
-      }
-      else 
-      {
+      } else {
         this.setState({ errors: {} });
         nextAnimation();
       }
@@ -103,16 +107,14 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.city.length === 0) {
-        errors['city'] = 'City is required'; // Set error message
+        errors["city"] = "City is required"; // Set error message
       }
       if (this.state.address.length === 0) {
-        errors['address'] = 'Home Address is required'; // Set error message
+        errors["address"] = "Home Address is required"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
-      }
-      else 
-      {
+      } else {
         this.setState({ errors: {} });
         nextAnimation();
       }
@@ -124,7 +126,7 @@ class Form extends React.Component {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        this.setState(oldState => ({
+        this.setState((oldState) => ({
           currentStep: oldState.currentStep - 1,
         }));
         gsap.fromTo(
@@ -139,7 +141,7 @@ class Form extends React.Component {
             duration: 0.1,
             stagger: 0.0,
             ease: "power1.out",
-          }
+          },
         );
       },
     });
@@ -179,34 +181,32 @@ class Form extends React.Component {
       this.setState({
         currentStep: 4,
       });
-    }
+    };
 
     if (this.state.currentStep === 3) {
       const errors = {}; // Create a new errors object
 
       if (this.state.file === null) {
-        errors['file'] = 'File is required'; // Set error message
+        errors["file"] = "File is required"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
-      }
-      else 
-      {
+      } else {
         this.setState({ errors: {} });
-        sendDatafn()
+        sendDatafn();
       }
     }
   };
 
   handleKeyPress = (e) => {
     // Handle Enter key
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault(); // Prevent default Enter behavior (like form submission)
       this.nextformpart();
     }
-    
+
     // Handle Backspace key
-    if (e.key === 'Backspace') {
+    if (e.key === "Backspace") {
       e.preventDefault(); // Prevent default Backspace behavior (like deleting text)
       this.prevformpart();
     }
@@ -217,34 +217,42 @@ class Form extends React.Component {
       return (
         <div className="form-content">
           <div className="mb-3">
-        
             <input
-              className={`form-control ${this.state.errors['name'] && 'incorrect'}`}
+              className={`form-control ${this.state.errors["name"] && "incorrect"}`}
               type="text"
               id="name"
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
-              placeholder="Full name"
+              placeholder={
+                this.state.errors["name"]
+                  ? this.state.errors["name"]
+                  : "Full Name"
+              }
               required
-        />
+            />
           </div>
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors['phone'] && 'incorrect'}`}
+              className={`form-control ${this.state.errors["phone"] && "incorrect"}`}
               type="text"
               id="phone"
               name="phone"
               value={this.state.phone}
               onChange={this.handleChange}
-              placeholder="Phone"
+              placeholder={
+                this.state.errors["phone"]
+                  ? this.state.errors["phone"]
+                  : "Phone Number"
+              }
               required
             />
           </div>
           <div className="d-flex justify-content-between">
             <button
               onClick={this.nextformpart}
-              className="btn w-100 form-button btn-primary">
+              className="btn w-100 form-button btn-primary"
+            >
               Next
             </button>
           </div>
@@ -255,7 +263,7 @@ class Form extends React.Component {
         <div className="form-content">
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors['city'] && 'incorrect'}`}
+              className={`form-control ${this.state.errors["city"] && "incorrect"}`}
               type="text"
               id="city"
               name="city"
@@ -267,7 +275,7 @@ class Form extends React.Component {
           </div>
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors['address'] && 'incorrect'}`}
+              className={`form-control ${this.state.errors["address"] && "incorrect"}`}
               type="text"
               id="address"
               name="address"
@@ -280,12 +288,14 @@ class Form extends React.Component {
           <div className="d-flex justify-content-between">
             <button
               onClick={this.prevformpart}
-              className="btn w-100 form-button btn-secondary me-3">
+              className="btn w-100 form-button btn-secondary me-3"
+            >
               Back
             </button>
             <button
               onClick={this.nextformpart}
-              className="btn w-100 form-button btn-primary">
+              className="btn w-100 form-button btn-primary"
+            >
               Next
             </button>
           </div>
@@ -308,16 +318,19 @@ class Form extends React.Component {
           </div>
           <div className="mb-3">
             <div className="input-group custom-file-button">
-              <label 
-                className={`input-group-text ${this.state.errors['file'] && 'incorrect-d-none'}`}
-                htmlFor="file" role="button">
+              <label
+                className={`input-group-text ${this.state.errors["file"] && "incorrect-d-none"}`}
+                htmlFor="file"
+                role="button"
+              >
                 Chose File
               </label>
               <label
-                className={`form-control ${this.state.errors['file'] && 'incorrect'}`}
+                className={`form-control ${this.state.errors["file"] && "incorrect"}`}
                 id="file-label"
                 htmlFor="file"
-                role="button">
+                role="button"
+              >
                 {this.state.fileName}
               </label>
               <input
@@ -333,12 +346,14 @@ class Form extends React.Component {
           <div className="d-flex justify-content-between">
             <button
               onClick={this.prevformpart}
-              className="btn w-100 form-button btn-secondary me-3">
+              className="btn w-100 form-button btn-secondary me-3"
+            >
               Back
             </button>
             <button
               onClick={this.handleSubmit}
-              className="btn w-100 submit-button btn-primary">
+              className="btn w-100 submit-button btn-primary"
+            >
               Submit
             </button>
           </div>
@@ -347,12 +362,13 @@ class Form extends React.Component {
     } else if (this.state.currentStep === 4) {
       return (
         <div className="form-content py-3">
-          <p className="fs-7" >Thank you, form submitted.</p>
-            <button
-              onClick={this.handleBack}
-              className="btn w-100 submit-button btn-primary">
-              Back
-            </button>
+          <p className="fs-7">Thank you, form submitted.</p>
+          <button
+            onClick={this.handleBack}
+            className="btn w-100 submit-button btn-primary"
+          >
+            Back
+          </button>
         </div>
       );
     }

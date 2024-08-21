@@ -22,10 +22,10 @@ html {
     position: absolute;
     top: 0;
     opacity: 0.5;
-    height: 100%;
+    height: 200%;
     width: 100%;
     background-image: url("../public/images/school-pattern.jpg");
-    background-size: auto 50%; /* Scale the image to cover 50% of the height */
+    background-size: auto 40%; /* Scale the image to cover 50% of the height */
     background-position: center top; /* Position the image at the top center */
     background-repeat: repeat; /* Repeat the image to cover the area */
     z-index: -10;
@@ -81,20 +81,9 @@ html {
 
 .about-img-1 {
     border-radius: 24px;
-    max-height: 15rem; /* Set your desired max-height */
+    max-height: 10rem; /* Set your desired max-height */
     width: 100%; /* Maintain aspect ratio */
     object-fit: cover;
-}
-
-.text-overlay {
-    position: absolute;
-    top: 50%; /* Adjust as needed */
-    left: 50%; /* Adjust as needed */
-    transform: translate(-50%, -50%); /* Center the text */
-    color: white; /* Text color */
-    padding: 10px; /* Optional: padding for better readability */
-    border-radius: 5px; /* Optional: rounded corners */
-    text-align: center; /* Center text */
 }
 
 .third-heading {
@@ -149,8 +138,8 @@ html {
     outline: none;
 }
 
-.form-content .form-input::placeholder {
-    color: #abc4ff; /* Placeholder text color */
+.form-control::placeholder {
+    color: #526a90 !important; /* Placeholder text color */
     font-weight: 300;
 }
 
@@ -210,6 +199,11 @@ html {
     box-shadow: 0 0 0 0.25rem rgba(44, 72, 117, 0.25) !important;
 }
 
+.incorrect:focus {
+    border-color: #8a508f !important;
+    box-shadow: 0 0 0 0.25rem rgba(138, 80, 143, 0.25) !important;
+}
+
 .form-button {
     border: 0 !important;
     font-weight: 700 !important;
@@ -258,6 +252,9 @@ html {
     background-color: #d1d8e3;
 }
 
+.second-section-feature-text-bod {
+}
+
 .second-section-heading,
 .second-section-heading2 {
     font-weight: 700 !important;
@@ -300,6 +297,11 @@ html {
     background-color: #f3edf4 !important;
     color: #321a34 !important;
     border-color: #dcc9dd !important;
+}
+
+.incorrect::placeholder {
+    color: #a172a5 !important; /* Placeholder text color */
+    font-weight: 300;
 }
 
 .incorrect-d-none {
