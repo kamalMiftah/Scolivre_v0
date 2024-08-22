@@ -1,9 +1,8 @@
-import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import Starter from "../views/ui/Tables";
 import { Container } from "reactstrap";
 import Tables from "../views/ui/Tables";
+import Forms from "../views/ui/Forms";
 
 const FullLayout = () => {
   return (
@@ -20,6 +19,7 @@ const FullLayout = () => {
           {/********Middle Content**********/}
           <Container className="p-4" fluid>
             <Tables />
+            <Forms />
           </Container>
         </div>
       </div>
