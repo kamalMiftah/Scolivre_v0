@@ -93,20 +93,11 @@ const Sidebar = () => {
                     : "nav-link text-secondary py-3"
                 }
               >
-                <i className={"d-inline-flex "  + `${navi.icon}`}></i>
+                <i className={"d-inline-flex " + `${navi.icon}`}></i>
                 <span className="ms-3 d-inline-block">{navi.title}</span>
               </Link>
             </NavItem>
           ))}
-          <Button
-            color="danger"
-            tag="a"
-            target="_blank"
-            className="mt-3"
-            href="https://wrappixel.com/templates/materialpro-react-admin/?ref=33"
-          >
-            Upgrade To Pro
-          </Button>
         </Nav>
       </div>
     </div>

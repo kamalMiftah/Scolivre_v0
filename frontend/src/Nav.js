@@ -2,7 +2,7 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark shadow w-100 m-0">
+    <nav className="navbar navbar-stylo navbar-expand-lg navbar-dark shadow w-100 m-0">
       <div className="container justify-content-between">
         <a className="navbar-brand p-0 mx-4" href="#">
           Navbar
@@ -23,7 +23,7 @@ function Nav() {
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
-          <ul className="navbar-nav align-items-center">
+          <ul className="navbar-nav navbar-nav-main align-items-center">
             <li className="nav-item">
               <a
                 className="btn btn-secondary nav-link active menu-button py-1"

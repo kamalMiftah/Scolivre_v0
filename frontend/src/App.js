@@ -1,29 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./Home";
 import About from "./About";
-import Themeroutes from "./routes/Router";
+import Admin from "./Admin";
 
-const AppRoutes = () => {
-  // Define your routes here
-  const routes = [
-    { path: "/", element: <Home /> },
-    { path: "/about", element: <About /> },
-    ...Themeroutes, // Assuming Themeroutes is an array of route objects
-  ];
-
-  return useRoutes(routes);
-};
-
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="dark">
-        <AppRoutes />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;
