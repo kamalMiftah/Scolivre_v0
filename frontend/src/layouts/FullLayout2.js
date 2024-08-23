@@ -2,7 +2,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { Container } from "reactstrap";
 import Tables from "../views/ui/Tables";
-import Forms from "../views/ui/Forms";
+// import Forms from "../views/ui/Forms";
 
 const FullLayout = () => {
   return (
@@ -15,11 +15,11 @@ const FullLayout = () => {
           <Sidebar />
         </aside>
         {/********Content Area**********/}
-        <div className="contentArea">
+        <div className="contentArea w-100">
           {/********Middle Content**********/}
           <Container className="p-4" fluid>
             <Tables />
-            <Forms />
+            {/* <Forms /> */}
           </Container>
         </div>
       </div>
