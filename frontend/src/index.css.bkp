@@ -196,6 +196,7 @@
     background-color: #e8ebf1 !important;
     color: #0a1629 !important;
     border-color: #bbc5d5 !important;
+    border-radius: 24px !important;
 }
 
 .form-control-22:focus {
@@ -213,6 +214,7 @@
     font-weight: 700 !important;
     background-color: #2c4875 !important;
     color: #e8ebf1 !important;
+    border-radius: 24px !important;
 }
 
 .form-button:hover {
@@ -224,6 +226,7 @@
     background-color: #8a508f !important;
     border: 0 !important;
     color: #f3edf4 !important;
+    border-radius: 24px !important;
 }
 
 .submit-button:hover {
@@ -234,7 +237,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0 !important;
+    border-radius: 0 24px 24px 0 !important;
     text-align: left !important;
 }
 
@@ -242,7 +245,7 @@
     font-weight: 400 !important;
     background-color: #d1d8e3 !important;
     border-color: #bbc5d5 !important;
-    border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
+    border-radius: 24px 0 0 24px !important;
 }
 
 .second-section {
