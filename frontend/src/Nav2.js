@@ -26,26 +26,27 @@ function Nav2() {
           <ul className="navbar-nav navbar-nav-main align-items-center">
             <li className="nav-item">
               <a
-                className="btn btn-secondary nav-link active menu-button py-1"
+                className="px-3 btn btn-secondary nav-link active menu-button py-1"
                 href="#"
               >
                 Home
               </a>
             </li>
+
             <li className="nav-item">
               <a
-                className="btn btn-secondary nav-link menu-button py-1"
-                href="#about-section"
+                className="px-3 btn btn-secondary nav-link menu-button py-1"
+                href="#marche-section"
               >
-                About
+                Comment ça marche?
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="btn btn-secondary nav-link menu-button py-1"
-                href="#"
+                className="px-3 btn btn-secondary nav-link menu-button py-1"
+                href="#about-section"
               >
-                Policy
+                About
               </a>
             </li>
           </ul>
