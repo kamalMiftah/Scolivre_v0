@@ -2,7 +2,7 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-stylo navbar-expand-lg navbar-dark shadow w-100 m-0">
+    <nav className="fixed-mobile navbar navbar-stylo navbar-expand-lg navbar-dark shadow w-100 m-0">
       <div className="container justify-content-between">
         <a className="navbar-brand p-0 mx-4" href="#">
           Navbar

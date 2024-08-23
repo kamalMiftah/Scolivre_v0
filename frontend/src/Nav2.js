@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function Nav2() {
   return (
@@ -31,6 +31,13 @@ function Nav2() {
                 activeClass="active"
                 to="home-section"
                 spy={true}
+                onClick={() => {
+                  // Manually collapse the navbar by toggling the class
+                  const navbarCollapse = document.getElementById("navbarNav");
+                  if (navbarCollapse) {
+                    navbarCollapse.classList.remove("show");
+                  }
+                }}
               >
                 Home
               </Link>
@@ -42,6 +49,13 @@ function Nav2() {
                 activeClass="active"
                 to="marche-section"
                 spy={true}
+                onClick={() => {
+                  // Manually collapse the navbar by toggling the class
+                  const navbarCollapse = document.getElementById("navbarNav");
+                  if (navbarCollapse) {
+                    navbarCollapse.classList.remove("show");
+                  }
+                }}
               >
                 Comment ça marche?
               </Link>
@@ -53,6 +67,13 @@ function Nav2() {
                 activeClass="active"
                 to="about-section"
                 spy={true}
+                onClick={() => {
+                  // Manually collapse the navbar by toggling the class
+                  const navbarCollapse = document.getElementById("navbarNav");
+                  if (navbarCollapse) {
+                    navbarCollapse.classList.remove("show");
+                  }
+                }}
               >
                 About
               </Link>
