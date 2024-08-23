@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
-import user1 from "../../assets/images/users/user1.jpg";
 
 // Function to authenticate and get the token
 const authenticate = async () => {
@@ -52,12 +51,16 @@ const ProjectTables = ({ onClientClick }) => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle tag="h5">Project Listing</CardTitle>
+          <CardTitle tag="h5" className="fw-bold">Gestion des Commandes</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Overview of the projects
+            Surveillez, modifiez et gérez les commandes des clients.
           </CardSubtitle>
 
-          <Table className="table-full-width no-wrap mt-3 align-middle" responsive borderless>
+          <Table
+            className="table-full-width no-wrap mt-3 align-middle"
+            responsive
+            borderless
+          >
             <thead>
               <tr>
                 <th>Name</th>
@@ -71,17 +74,19 @@ const ProjectTables = ({ onClientClick }) => {
                   key={tdata.command_id}
                   className="border-top"
                   onClick={() => onClientClick(tdata)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 >
                   <td>
                     <div className="d-flex align-items-center py-2">
                       <div className="ms-0">
                         <h6 className="mb-0">{tdata.name}</h6>
-                        <span className="text-muted">{tdata.phone_number || 'N/A'}</span>
+                        <span className="text-muted">
+                          {tdata.phone_number || "N/A"}
+                        </span>
                       </div>
                     </div>
                   </td>
-                  <td>{tdata.city || 'N/A'}</td>
+                  <td>{tdata.city || "N/A"}</td>
                   <td>
                     {tdata.order_state === "PENDING" ? (
                       <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>

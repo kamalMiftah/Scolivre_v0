@@ -51,12 +51,12 @@ const Tables = () => {
       {/* --------------------------------------------------------------------------------*/}
       {/* table-2 */}
       {/* --------------------------------------------------------------------------------*/}
-      <Col lg="12">
+      <Col lg="12" className="mt-4">
         {selectedClient && (
           <Card>
-            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <CardTitle tag="h5" className="border-bottom p-3 mb-0 fw-bold">
               <i className="bi bi-card-text me-2"> </i>
-              Selected Client Information
+              Détails de la Commande
             </CardTitle>
             <CardBody>
               <Table bordered striped className="table-full-width">
@@ -81,7 +81,7 @@ const Tables = () => {
                       <img
                         src={selectedClient.image}
                         alt="Client"
-                        style={{ width: '100px', height: 'auto' }}
+                        style={{ width: "100px", height: "auto" }}
                       />
                     </td>
                   </tr>
@@ -94,86 +94,89 @@ const Tables = () => {
 
       {/* Form */}
       {/* --------------------------------------------------------------------------------*/}
-      <Col lg="12">
-        <Card>
-          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            <i className="bi bi-bell me-2"> </i>
-            Edit Client Info
-          </CardTitle>
-          <CardBody>
-            {selectedClient && (
-              <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                  <Label for="name">Full Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={selectedClient.name}
-                    onChange={handleInputChange}
-                    placeholder="Enter full name"
-                    type="text"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="phone_number">Phone Number</Label>
-                  <Input
-                    id="phone_number"
-                    name="phone_number"
-                    value={selectedClient.phone_number}
-                    onChange={handleInputChange}
-                    placeholder="Enter phone number"
-                    type="text"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="city">City</Label>
-                  <Input
-                    id="city"
-                    name="city"
-                    value={selectedClient.city}
-                    onChange={handleInputChange}
-                    placeholder="Enter city"
-                    type="text"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="home_address">Address</Label>
-                  <Input
-                    id="home_address"
-                    name="home_address"
-                    value={selectedClient.home_address}
-                    onChange={handleInputChange}
-                    placeholder="Enter address"
-                    type="text"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="comment_client">Comment Client</Label>
-                  <Input
-                    id="comment_client"
-                    name="comment_client"
-                    value={selectedClient.comment_client}
-                    onChange={handleInputChange}
-                    placeholder="Enter comment"
-                    type="text"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="image">Image URL</Label>
-                  <Input
-                    id="image"
-                    name="image"
-                    value={selectedClient.image}
-                    onChange={handleInputChange}
-                    placeholder="Enter image URL"
-                    type="text"
-                  />
-                </FormGroup>
-                <Button type="submit">Update Client</Button>
-              </Form>
-            )}
-          </CardBody>
-        </Card>
+      <Col lg="12" className="mt-4">
+        {selectedClient && (
+          <Card>
+            <CardTitle tag="h5" className="border-bottom p-3 mb-0 fw-bold">
+              <i className="bi bi-bell me-2"> </i>
+              Modifier les Informations de la Commande
+            </CardTitle>
+            <CardBody>
+              {selectedClient && (
+                <Form onSubmit={handleSubmit}>
+                  <FormGroup>
+                    <Label for="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={selectedClient.name}
+                      onChange={handleInputChange}
+                      placeholder="Enter full name"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="phone_number">Phone Number</Label>
+                    <Input
+                      id="phone_number"
+                      name="phone_number"
+                      value={selectedClient.phone_number}
+                      onChange={handleInputChange}
+                      placeholder="Enter phone number"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="city">City</Label>
+                    <Input
+                      id="city"
+                      name="city"
+                      value={selectedClient.city}
+                      onChange={handleInputChange}
+                      placeholder="Enter city"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="home_address">Address</Label>
+                    <Input
+                      id="home_address"
+                      name="home_address"
+                      value={selectedClient.home_address}
+                      onChange={handleInputChange}
+                      placeholder="Enter address"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="comment_client">Comment Client</Label>
+                    <Input
+                      id="comment_client"
+                      name="comment_client"
+                      value={selectedClient.comment_client}
+                      onChange={handleInputChange}
+                      placeholder="Enter comment"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="image">Image URL</Label>
+                    <Input
+                      id="image"
+                      name="image"
+                      value={selectedClient.image}
+                      onChange={handleInputChange}
+                      placeholder="Enter image URL"
+                      type="text"
+                    />
+                  </FormGroup>
+                  <Button type="submit">Update Client</Button>
+                </Form>
+              )}
+            </CardBody>
+          </Card>
+        )}
+        ;
       </Col>
     </Row>
   );
