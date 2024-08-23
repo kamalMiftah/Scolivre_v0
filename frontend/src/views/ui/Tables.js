@@ -267,7 +267,20 @@ const Tables = () => {
                     name="comment_client"
                     value={selectedClient.comment_client}
                     onChange={handleInputChange}
-                    placeholder="Enter comment"
+                    placeholder="Enter client comment"
+                    type="textarea"
+                    rows="4" // Adjust the number of rows based on the desired height
+                    style={{ whiteSpace: "pre-wrap" }}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label for="comment_admin">Comment Admin</Label>
+                  <Input
+                    id="comment_admin"
+                    name="comment_admin"
+                    value={selectedClient.comment_admin}
+                    onChange={handleInputChange}
+                    placeholder="Enter admin comment"
                     type="textarea"
                     rows="4" // Adjust the number of rows based on the desired height
                     style={{ whiteSpace: "pre-wrap" }}
@@ -289,16 +302,18 @@ const Tables = () => {
                     <option value="CANCELLED">Cancelled</option>
                   </Input>
                 </FormGroup>
-                <FormGroup>
-                  <Label for="image">Image</Label>
-                  <Input
-                    id="image"
-                    name="image"
-                    onChange={handleFileChange}
-                    placeholder="Upload image"
-                    type="file"
-                  />
-                </FormGroup>
+                {/*
+                  <FormGroup>
+                    <Label for="image">Image</Label>
+                    <Input
+                      id="image"
+                      name="image"
+                      onChange={handleFileChange}
+                      placeholder="Upload image"
+                      type="file"
+                    />
+                  </FormGroup>
+                  */}
                 <Button type="submit">Update Client</Button>
               </Form>
             </CardBody>
