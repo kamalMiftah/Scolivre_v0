@@ -36,7 +36,10 @@ function Home() {
     <div>
       <div className="pattern-div"></div>
 
-      <div className="container position-relative overflow-hidden">
+      <div
+        id="home-section"
+        className="container position-relative overflow-hidden"
+      >
         <div className="big-div p-4 mb-5 shadow d-flex flex-column align-items-center text-center">
           <Nav />
           {showNav2 && <Nav2 />} {/* Conditionally render Nav2 */}
@@ -112,8 +115,7 @@ function Home() {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-5 order-1 order-lg-2 div-features-css">
                 <p className="second-section-heading2 display-3 overflow-visible lh-1">
-                  Comment <br />
-                  Passer Votre Commande?
+                  Comment ça marche?
                 </p>
                 <div className="second-section-line second-section-line2 pb-3 ms-auto"></div>
               </div>
@@ -244,67 +246,69 @@ function Home() {
         </div>
       </div>
 
-      <div id="about-section" className="third-section section">
-        <div className="container p-4">
-          <div className="div-section-2 pt-5 my-5">
-            <div className="row justify-content-center">
-              <div className="col-12 div-features-css">
-                <p className="col-12 third-section-heading display-3 lh-1">
-                  À Propos de Nous
-                </p>
-                <div className="col-6 third-section-line pb-3"></div>
-                <p className="col-12 third-section-feature-text mt-5 fs-5">
-                  Bienvenue sur notre site dédié à la fourniture de matériel
-                  scolaire pour les enfants ! Nous sommes passionnés par
-                  l'éducation et la préparation des jeunes esprits pour une
-                  nouvelle année scolaire réussie.
-                </p>
+      <div id="about-section">
+        <div className="third-section section">
+          <div className="container p-4">
+            <div className="div-section-2 pt-5 my-5">
+              <div className="row justify-content-center">
+                <div className="col-12 div-features-css">
+                  <p className="col-12 third-section-heading display-3 lh-1">
+                    À Propos de Nous
+                  </p>
+                  <div className="col-6 third-section-line pb-3"></div>
+                  <p className="col-12 third-section-feature-text mt-5 fs-5">
+                    Bienvenue sur notre site dédié à la fourniture de matériel
+                    scolaire pour les enfants ! Nous sommes passionnés par
+                    l'éducation et la préparation des jeunes esprits pour une
+                    nouvelle année scolaire réussie.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="forth-section section">
-        <div className="container p-4">
-          <div className="div-section-2 pt-5 my-5">
-            <div className="row justify-content-center">
-              <div className="col-12 div-features-css">
-                <p className="col-12 forth-section-heading display-3 lh-1">
-                  Notre Mission
-                </p>
-                <div className="col-6 forth-section-line pb-3"></div>
-                <p className="col-12 forth-section-feature-text mt-5 fs-5">
-                  Nous avons pour mission de simplifier le processus d'achat de
-                  fournitures scolaires en offrant un service de livraison
-                  pratique directement à votre porte. Nous croyons que chaque
-                  enfant mérite le meilleur départ possible pour l'année
-                  scolaire, et nous nous engageons à fournir des produits de
-                  qualité qui répondent à tous leurs besoins.
-                </p>
+        <div className="forth-section section">
+          <div className="container p-4">
+            <div className="div-section-2 pt-5 my-5">
+              <div className="row justify-content-center">
+                <div className="col-12 div-features-css">
+                  <p className="col-12 forth-section-heading display-3 lh-1">
+                    Notre Mission
+                  </p>
+                  <div className="col-6 forth-section-line pb-3"></div>
+                  <p className="col-12 forth-section-feature-text mt-5 fs-5">
+                    Nous avons pour mission de simplifier le processus d'achat
+                    de fournitures scolaires en offrant un service de livraison
+                    pratique directement à votre porte. Nous croyons que chaque
+                    enfant mérite le meilleur départ possible pour l'année
+                    scolaire, et nous nous engageons à fournir des produits de
+                    qualité qui répondent à tous leurs besoins.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="a-section section">
-        <div className="container p-4">
-          <div className="div-section-2 pt-5 my-5">
-            <div className="row justify-content-center">
-              <div className="col-12 div-features-css">
-                <p className="col-12 a-section-heading display-3 lh-1">
-                  Notre Histoire
-                </p>
-                <div className="col-6 a-section-line pb-3"></div>
-                <p className="col-12 a-section-feature-text mt-5 fs-5">
-                  Fondé en 2024, notre entreprise a été créée par une équipe de
-                  parents et d'éducateurs qui comprenaient les défis de la
-                  préparation scolaire. Nous avons décidé de mettre notre
-                  expertise et notre passion au service des familles en créant
-                  une solution simple et efficace pour obtenir tout le
-                  nécessaire pour la rentrée.
-                </p>
+        <div className="a-section section">
+          <div className="container p-4">
+            <div className="div-section-2 pt-5 my-5">
+              <div className="row justify-content-center">
+                <div className="col-12 div-features-css">
+                  <p className="col-12 a-section-heading display-3 lh-1">
+                    Notre Histoire
+                  </p>
+                  <div className="col-6 a-section-line pb-3"></div>
+                  <p className="col-12 a-section-feature-text mt-5 fs-5">
+                    Fondé en 2024, notre entreprise a été créée par une équipe
+                    de parents et d'éducateurs qui comprenaient les défis de la
+                    préparation scolaire. Nous avons décidé de mettre notre
+                    expertise et notre passion au service des familles en créant
+                    une solution simple et efficace pour obtenir tout le
+                    nécessaire pour la rentrée.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

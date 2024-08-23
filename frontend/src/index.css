@@ -420,9 +420,6 @@
         flex-direction: row;
         gap: 0.5rem !important;
     }
-    .menu-button {
-        width: 100px;
-    }
     .form-container {
         width: 40%;
     }

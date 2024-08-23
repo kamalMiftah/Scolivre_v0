@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Nav2() {
   return (
@@ -25,29 +26,36 @@ function Nav2() {
         >
           <ul className="navbar-nav navbar-nav-main align-items-center">
             <li className="nav-item">
-              <a
-                className="px-3 btn btn-secondary nav-link active menu-button py-1"
-                href="#"
+              <Link
+                className="px-3 btn btn-secondary nav-link menu-button py-1"
+                activeClass="active"
+                to="home-section"
+                spy={true}
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 btn btn-secondary nav-link menu-button py-1"
-                href="#marche-section"
+                activeClass="active"
+                to="marche-section"
+                spy={true}
               >
                 Comment ça marche?
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 btn btn-secondary nav-link menu-button py-1"
-                href="#about-section"
+                activeClass="active"
+                to="about-section"
+                spy={true}
               >
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
