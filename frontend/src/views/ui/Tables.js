@@ -221,7 +221,7 @@ const Tables = () => {
                   <Input
                     id="name"
                     name="name"
-                    value={selectedClient.name}
+                    value={selectedClient.name || ""}
                     onChange={handleInputChange}
                     placeholder="Enter full name"
                     type="text"
@@ -232,7 +232,7 @@ const Tables = () => {
                   <Input
                     id="phone_number"
                     name="phone_number"
-                    value={selectedClient.phone_number}
+                    value={selectedClient.phone_number || ""}
                     onChange={handleInputChange}
                     placeholder="Enter phone number"
                     type="text"
@@ -243,7 +243,7 @@ const Tables = () => {
                   <Input
                     id="city"
                     name="city"
-                    value={selectedClient.city}
+                    value={selectedClient.city || ""}
                     onChange={handleInputChange}
                     placeholder="Enter city"
                     type="text"
@@ -254,7 +254,7 @@ const Tables = () => {
                   <Input
                     id="home_address"
                     name="home_address"
-                    value={selectedClient.home_address}
+                    value={selectedClient.home_address || ""}
                     onChange={handleInputChange}
                     placeholder="Enter address"
                     type="text"
@@ -265,7 +265,7 @@ const Tables = () => {
                   <Input
                     id="comment_client"
                     name="comment_client"
-                    value={selectedClient.comment_client}
+                    value={selectedClient.comment_client || ""}
                     onChange={handleInputChange}
                     placeholder="Enter client comment"
                     type="textarea"
@@ -278,7 +278,7 @@ const Tables = () => {
                   <Input
                     id="comment_admin"
                     name="comment_admin"
-                    value={selectedClient.comment_admin}
+                    value={selectedClient.comment_admin || ""}
                     onChange={handleInputChange}
                     placeholder="Enter admin comment"
                     type="textarea"
@@ -291,7 +291,7 @@ const Tables = () => {
                   <Input
                     id="order_state"
                     name="order_state"
-                    value={selectedClient.order_state}
+                    value={selectedClient.order_state || ""}
                     onChange={handleInputChange}
                     placeholder="Enter order state"
                     type="select"
