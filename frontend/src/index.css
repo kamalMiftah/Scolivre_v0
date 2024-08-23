@@ -20,7 +20,7 @@
 }
 
 .nav-link.active {
-    color: #63512e !important;
+    background-color: #deb76e !important;
 }
 
 .pattern-div {
