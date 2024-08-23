@@ -263,28 +263,6 @@
     color: #d1d8e3;
 }
 
-.a-section-heading {
-    font-weight: 700 !important;
-    color: #e8dbe8;
-}
-
-.a-section-feature-text {
-    font-weight: 300 !important;
-    color: #e8dbe8 !important;
-}
-
-.a-section-line {
-    background-color: #e8dbe8;
-    background: linear-gradient(to right, #e8dbe8, rgba(232, 219, 232, 0));
-    transform: translate(0, 1rem);
-    border-radius: 24px;
-    margin-right: auto;
-}
-
-.a-section {
-    background: linear-gradient(to top, #b994bb, #96619a);
-}
-
 .third-section-heading {
     font-weight: 700 !important;
     color: #e3e6e8;
@@ -326,7 +304,7 @@
 }
 
 .forth-section {
-    background: linear-gradient(to top, #69879b, #21516b);
+    background-color: #173340;
 }
 
 .second-section-feature {

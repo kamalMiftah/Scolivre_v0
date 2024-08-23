@@ -180,19 +180,21 @@ const Tables = () => {
                       {selectedClient.order_state === "PENDING"
                         ? "Pending"
                         : selectedClient.order_state === "PROCESSING"
-                        ? "Processing"
-                        : selectedClient.order_state === "COMPLETED"
-                        ? "Completed"
-                        : selectedClient.order_state === "CANCELLED"
-                        ? "Cancelled"
-                        : null}
+                          ? "Processing"
+                          : selectedClient.order_state === "COMPLETED"
+                            ? "Completed"
+                            : selectedClient.order_state === "CANCELLED"
+                              ? "Cancelled"
+                              : null}
                     </td>
                     <td>
-                      <img
-                        src={selectedClient.image}
-                        alt="Client"
-                        style={{ width: "100px", height: "auto" }}
-                      />
+                      <a
+                        href={selectedClient.image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Download Requirements File
+                      </a>
                     </td>
                   </tr>
                 </tbody>

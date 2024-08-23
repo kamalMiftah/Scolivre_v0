@@ -6,8 +6,8 @@ import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
 export const authenticate = async () => {
   try {
     const response = await axios.post("http://localhost:8000/api/token/", {
-      email: "kamalmiftah01@gmail.com",
-      password: "4140",
+      email: "sepheiba@gmail.com",
+      password: "areon130",
     });
     return response.data.access;
   } catch (error) {
