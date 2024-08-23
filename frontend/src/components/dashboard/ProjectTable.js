@@ -91,13 +91,25 @@ const ProjectTables = ({ onClientClick }) => {
                   <td>{tdata.city || "N/A"}</td>
                   <td>
                     {tdata.order_state === "PENDING" ? (
-                      <span className="p-2 bg-secondary rounded-circle d-inline-block ms-3"></span>
+                      <div className="d-flex align-items-center">
+                        <span className="p-2 bg-secondary rounded-circle d-inline-block me-2"></span>
+                        <span>Pending</span>
+                      </div>
                     ) : tdata.order_state === "PROCESSING" ? (
-                      <span className="p-2 bg-warning rounded-circle d-inline-block ms-3"></span>
+                      <div className="d-flex align-items-center">
+                        <span className="p-2 bg-warning rounded-circle d-inline-block me-2"></span>
+                        <span>Processing</span>
+                      </div>
                     ) : tdata.order_state === "COMPLETED" ? (
-                      <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
+                      <div className="d-flex align-items-center">
+                        <span className="p-2 bg-success rounded-circle d-inline-block me-2"></span>
+                        <span>Completed</span>
+                      </div>
                     ) : tdata.order_state === "CANCELLED" ? (
-                      <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
+                      <div className="d-flex align-items-center">
+                        <span className="p-2 bg-danger rounded-circle d-inline-block me-2"></span>
+                        <span>Cancelled</span>
+                      </div>
                     ) : null}
                   </td>
                 </tr>
