@@ -413,6 +413,9 @@
     .second-section-line2 {
         background: linear-gradient(to left, #d1d8e3, rgba(209, 216, 227, 0));
     }
+    .image-2 {
+        width: 60%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -460,6 +463,9 @@
     .responsive-image {
         width: 80%; /* 80% width on extra-small screens */
         margin: 0 auto; /* Center the image */
+    }
+    .image-2 {
+        width: 70%;
     }
 }
 

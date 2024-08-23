@@ -249,9 +249,9 @@ function Home() {
       <div id="about-section">
         <div className="third-section section">
           <div className="container p-4">
-            <div className="div-section-2 pt-5 my-5">
-              <div className="row justify-content-center">
-                <div className="col-12 div-features-css">
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-7 order-2 order-lg-1">
+                <div className="div-section-2 pt-0 pt-lg-5 my-5">
                   <p className="col-12 third-section-heading display-3 lh-1">
                     À Propos de Nous
                   </p>
@@ -260,9 +260,16 @@ function Home() {
                     Bienvenue sur notre site dédié à la fourniture de matériel
                     scolaire pour les enfants ! Nous sommes passionnés par
                     l'éducation et la préparation des jeunes esprits pour une
-                    nouvelle année scolaire réussie.
+                    nouvelle année scolaire réussie. bfd7b1
                   </p>
                 </div>
+              </div>
+              <div className="col-12 col-lg-5 order-1 order-lg-2 px-5 mt-5 d-flex justify-content-center">
+                <img
+                  src="images/7060732.png"
+                  alt="About Us"
+                  className="img-fluid image-2 pt-5 pt-lg-0"
+                />
               </div>
             </div>
           </div>
