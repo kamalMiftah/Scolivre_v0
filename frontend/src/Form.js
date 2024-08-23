@@ -218,7 +218,7 @@ class Form extends React.Component {
         <div className="form-content">
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors["name"] && "incorrect"}`}
+              className={`form-control form-control-22 ${this.state.errors["name"] && "incorrect"}`}
               type="text"
               id="name"
               name="name"
@@ -234,7 +234,7 @@ class Form extends React.Component {
           </div>
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors["phone"] && "incorrect"}`}
+              className={`form-control form-control-22 ${this.state.errors["phone"] && "incorrect"}`}
               type="text"
               id="phone"
               name="phone"
@@ -263,7 +263,7 @@ class Form extends React.Component {
         <div className="form-content">
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors["city"] && "incorrect"}`}
+              className={`form-control form-control-22 ${this.state.errors["city"] && "incorrect"}`}
               type="text"
               id="city"
               name="city"
@@ -275,7 +275,7 @@ class Form extends React.Component {
           </div>
           <div className="mb-3">
             <input
-              className={`form-control ${this.state.errors["address"] && "incorrect"}`}
+              className={`form-control form-control-22 ${this.state.errors["address"] && "incorrect"}`}
               type="text"
               id="address"
               name="address"
@@ -306,7 +306,7 @@ class Form extends React.Component {
         <div className="form-content">
           <div className="mb-3">
             <input
-              className="comment-form form-control"
+              className="comment-form form-control form-control-22"
               type="text"
               id="comment"
               name="comment"
@@ -326,7 +326,7 @@ class Form extends React.Component {
                 Chose File
               </label>
               <label
-                className={`form-control ${this.state.errors["file"] && "incorrect"}`}
+                className={`form-control form-control-22 ${this.state.errors["file"] && "incorrect"}`}
                 id="file-label"
                 htmlFor="file"
                 role="button"
