@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import ProjectTables from "../../components/dashboard/ProjectTable";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ProjectTables, { authenticate } from "../../components/dashboard/ProjectTable";
 import {
   Row,
   Col,
@@ -12,10 +13,35 @@ import {
   Label,
   Input,
   Table,
+  Alert,
 } from "reactstrap";
 
 const Tables = () => {
   const [selectedClient, setSelectedClient] = useState(null);
+  const [clients, setClients] = useState([]);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const fetchClients = async () => {
+    const token = await authenticate();
+    axios
+      .get("http://localhost:8000/api/commands/", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setClients(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching clients:", error);
+      });
+  };
+
+  useEffect(() => {
+    // Fetch clients data to populate the first table
+    fetchClients();
+  }, []);
 
   const handleClientClick = (client) => {
     setSelectedClient(client);
@@ -29,10 +55,48 @@ const Tables = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Updated Client Info:", selectedClient);
-    // Update the client info in the state or send it to the backend
+
+    const clientId = selectedClient.command_id; // Use the updated client ID
+    const token = await authenticate();
+
+    const formData = new FormData();
+    formData.append("name", selectedClient.name);
+    formData.append("phone_number", selectedClient.phone_number);
+    formData.append("city", selectedClient.city);
+    formData.append("home_address", selectedClient.home_address);
+    formData.append("comment_client", selectedClient.comment_client);
+    if (selectedFile) {
+      formData.append("image", selectedFile);
+    }
+
+    // Perform a PATCH request to update the client information
+    axios
+      .patch(
+        `http://localhost:8000/api/commands/${clientId}/`,
+        formData, // Send the FormData object
+        {
+          headers: {
+            "Content-Type": "multipart/form-data", // Ensure the Content-Type header is set
+            Authorization: `Bearer ${token}`, // Use template literals to insert the token variable
+          },
+        }
+      )
+      .then((response) => {
+        console.log("Client updated successfully:", response.data);
+        setSuccessMessage("Client updated successfully!");
+        // Refresh the clients data
+        fetchClients();
+      })
+      .catch((error) => {
+        console.error("Error updating client:", error);
+      });
   };
 
   return (
@@ -43,7 +107,7 @@ const Tables = () => {
       <Col lg="12">
         <Card>
           <CardBody>
-            <ProjectTables onClientClick={handleClientClick} />
+            <ProjectTables clients={clients} onClientClick={handleClientClick} />
           </CardBody>
         </Card>
       </Col>
@@ -97,6 +161,11 @@ const Tables = () => {
       <Col lg="12" className="mt-4">
         {selectedClient && (
           <Card>
+            {successMessage && (
+              <Alert color="success" toggle={() => setSuccessMessage("")}>
+                {successMessage}
+              </Alert>
+            )}
             <CardTitle tag="h5" className="border-bottom p-3 mb-0 fw-bold">
               <i className="bi bi-bell me-2"> </i>
               Modifier les Informations de la Commande
@@ -105,7 +174,9 @@ const Tables = () => {
               {selectedClient && (
                 <Form onSubmit={handleSubmit}>
                   <FormGroup>
-                    <Label for="name">Full Name</Label>
+                    <Label for="name" className="">
+                      Full Name
+                    </Label>
                     <Input
                       id="name"
                       name="name"
@@ -160,14 +231,13 @@ const Tables = () => {
                     />
                   </FormGroup>
                   <FormGroup>
-                    <Label for="image">Image URL</Label>
+                    <Label for="image">Image</Label>
                     <Input
                       id="image"
                       name="image"
-                      value={selectedClient.image}
-                      onChange={handleInputChange}
-                      placeholder="Enter image URL"
-                      type="text"
+                      onChange={handleFileChange}
+                      placeholder="Upload image"
+                      type="file"
                     />
                   </FormGroup>
                   <Button type="submit">Update Client</Button>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
 
 // Function to authenticate and get the token
-const authenticate = async () => {
+export const authenticate = async () => {
   try {
     const response = await axios.post("http://localhost:8000/api/token/", {
       email: "kamalmiftah01@gmail.com",
@@ -17,7 +17,7 @@ const authenticate = async () => {
 };
 
 // Function to fetch data from the API
-const fetchData = async (token) => {
+export const fetchData = async (token) => {
   try {
     const response = await axios.get("http://localhost:8000/api/commands/", {
       headers: {
