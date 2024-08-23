@@ -51,7 +51,9 @@ const ProjectTables = ({ onClientClick }) => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle tag="h5" className="fw-bold">Gestion des Commandes</CardTitle>
+          <CardTitle tag="h5" className="fw-bold">
+            Gestion des Commandes
+          </CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             Surveillez, modifiez et gérez les commandes des clients.
           </CardSubtitle>
@@ -89,12 +91,14 @@ const ProjectTables = ({ onClientClick }) => {
                   <td>{tdata.city || "N/A"}</td>
                   <td>
                     {tdata.order_state === "PENDING" ? (
-                      <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
-                    ) : tdata.order_state === "HOLD" ? (
+                      <span className="p-2 bg-secondary rounded-circle d-inline-block ms-3"></span>
+                    ) : tdata.order_state === "PROCESSING" ? (
                       <span className="p-2 bg-warning rounded-circle d-inline-block ms-3"></span>
-                    ) : (
+                    ) : tdata.order_state === "COMPLETED" ? (
                       <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
-                    )}
+                    ) : tdata.order_state === "CANCELLED" ? (
+                      <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
+                    ) : null}
                   </td>
                 </tr>
               ))}
