@@ -1,6 +1,6 @@
 import React from "react";
 
-function Nav() {
+function Nav2() {
   return (
     <nav className="navbar navbar-stylo-2 position-fixed navbar-expand-lg navbar-dark shadow w-100 py-3 m-0">
       <div className="container justify-content-between">
@@ -35,7 +35,7 @@ function Nav() {
             <li className="nav-item">
               <a
                 className="btn btn-secondary nav-link menu-button py-1"
-                href="#"
+                href="#about-section"
               >
                 About
               </a>
@@ -55,4 +55,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Nav2;

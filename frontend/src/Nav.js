@@ -35,7 +35,7 @@ function Nav() {
             <li className="nav-item">
               <a
                 className="btn btn-secondary nav-link menu-button py-1"
-                href="#"
+                href="#about-section"
               >
                 About
               </a>

@@ -244,9 +244,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="third-section section">
+      <div id="about-section" className="third-section section">
         <div className="container p-4">
-          <div className="div-section-2 py-5 my-5">
+          <div className="div-section-2 pt-5 my-5">
             <div className="row justify-content-center">
               <div className="col-12 div-features-css">
                 <p className="col-12 third-section-heading display-3 lh-1">
@@ -267,7 +267,7 @@ function Home() {
 
       <div className="forth-section section">
         <div className="container p-4">
-          <div className="div-section-2 py-5 my-5">
+          <div className="div-section-2 pt-5 my-5">
             <div className="row justify-content-center">
               <div className="col-12 div-features-css">
                 <p className="col-12 forth-section-heading display-3 lh-1">
@@ -290,7 +290,7 @@ function Home() {
 
       <div className="a-section section">
         <div className="container p-4">
-          <div className="div-section-2 py-5 my-5">
+          <div className="div-section-2 pt-5 my-5">
             <div className="row justify-content-center">
               <div className="col-12 div-features-css">
                 <p className="col-12 a-section-heading display-3 lh-1">
