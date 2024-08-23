@@ -113,7 +113,7 @@ function Home() {
 
           <div className="div-section-2 pb-5 my-5">
             <div className="row justify-content-center">
-              <div className="col-12 col-lg-5 order-1 order-lg-2 div-features-css">
+              <div className="col-12 col-lg-4 order-1 order-lg-2 div-features-css">
                 <p className="second-section-heading2 display-3 overflow-visible lh-1">
                   Comment
                   <br /> ça marche?
@@ -121,7 +121,7 @@ function Home() {
                 <div className="second-section-line second-section-line2 pb-3 ms-auto"></div>
               </div>
 
-              <div className="col-12 col-lg-7 order-2 order-lg-1 second-section-features shadow px-5 py-5">
+              <div className="col-12 col-lg-8 order-2 order-lg-1 second-section-features shadow px-5 py-5">
                 <div className="mx-auto row justify-content-center">
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">

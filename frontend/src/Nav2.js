@@ -31,6 +31,7 @@ function Nav2() {
                 activeClass="active"
                 to="home-section"
                 spy={true}
+                offset={-60}
               >
                 Home
               </Link>
@@ -42,6 +43,7 @@ function Nav2() {
                 activeClass="active"
                 to="marche-section"
                 spy={true}
+                offset={-60}
               >
                 Comment ça marche?
               </Link>
@@ -53,6 +55,7 @@ function Nav2() {
                 activeClass="active"
                 to="about-section"
                 spy={true}
+                offset={-60}
               >
                 About
               </Link>

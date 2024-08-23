@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function Nav() {
   return (
@@ -25,29 +26,38 @@ function Nav() {
         >
           <ul className="navbar-nav navbar-nav-main align-items-center">
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 btn btn-secondary nav-link active menu-button py-1"
-                href="#"
+                activeClass="active"
+                to="home-section"
+                spy={true}
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 btn btn-secondary nav-link menu-button py-1"
-                href="#marche-section"
+                activeClass="active"
+                to="marche-section"
+                spy={true}
+                offset={-60}
               >
                 Comment ça marche?
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a
+              <Link
                 className="px-3 btn btn-secondary nav-link menu-button py-1"
-                href="#about-section"
+                activeClass="active"
+                to="about-section"
+                spy={true}
+                offset={-60}
               >
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
