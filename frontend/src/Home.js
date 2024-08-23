@@ -1,16 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import Nav from "./Nav";
+import Nav2 from "./Nav2";
 import { animateElements } from "./gsapAnimations";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 function Home() {
+  const [showNav2, setShowNav2] = useState(false);
+
   useEffect(() => {
     // Call the animateElements function when the component mounts
     animateElements();
-  }, []); // Empty dependency array ensures this runs only once on mount
+
+    const handleScroll = () => {
+      if (window.scrollY > 150) {
+        // Adjust this value as needed
+        setShowNav2(true);
+      } else {
+        setShowNav2(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -19,6 +39,7 @@ function Home() {
       <div className="container position-relative overflow-hidden">
         <div className="big-div p-4 mb-5 shadow d-flex flex-column align-items-center text-center">
           <Nav />
+          {showNav2 && <Nav2 />} {/* Conditionally render Nav2 */}
           <p className="main-heading display-5 mt-4 pt-3 pb-0 mb-0 mx-4">
             Préparez la rentrée facilement !<br /> Commandez, nous livrons.
           </p>
@@ -217,6 +238,73 @@ function Home() {
                     <span className="visually-hidden">Next</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="third-section section">
+        <div className="container p-4">
+          <div className="div-section-2 py-5 my-5">
+            <div className="row justify-content-center">
+              <div className="col-12 div-features-css">
+                <p className="col-12 third-section-heading display-3 lh-1">
+                  À Propos de Nous
+                </p>
+                <div className="col-6 third-section-line pb-3"></div>
+                <p className="col-12 third-section-feature-text mt-5 fs-5">
+                  Bienvenue sur notre site dédié à la fourniture de matériel
+                  scolaire pour les enfants ! Nous sommes passionnés par
+                  l'éducation et la préparation des jeunes esprits pour une
+                  nouvelle année scolaire réussie.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="forth-section section">
+        <div className="container p-4">
+          <div className="div-section-2 py-5 my-5">
+            <div className="row justify-content-center">
+              <div className="col-12 div-features-css">
+                <p className="col-12 forth-section-heading display-3 lh-1">
+                  Notre Mission
+                </p>
+                <div className="col-6 forth-section-line pb-3"></div>
+                <p className="col-12 forth-section-feature-text mt-5 fs-5">
+                  Nous avons pour mission de simplifier le processus d'achat de
+                  fournitures scolaires en offrant un service de livraison
+                  pratique directement à votre porte. Nous croyons que chaque
+                  enfant mérite le meilleur départ possible pour l'année
+                  scolaire, et nous nous engageons à fournir des produits de
+                  qualité qui répondent à tous leurs besoins.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="a-section section">
+        <div className="container p-4">
+          <div className="div-section-2 py-5 my-5">
+            <div className="row justify-content-center">
+              <div className="col-12 div-features-css">
+                <p className="col-12 a-section-heading display-3 lh-1">
+                  Notre Histoire
+                </p>
+                <div className="col-6 a-section-line pb-3"></div>
+                <p className="col-12 a-section-feature-text mt-5 fs-5">
+                  Fondé en 2024, notre entreprise a été créée par une équipe de
+                  parents et d'éducateurs qui comprenaient les défis de la
+                  préparation scolaire. Nous avons décidé de mettre notre
+                  expertise et notre passion au service des familles en créant
+                  une solution simple et efficace pour obtenir tout le
+                  nécessaire pour la rentrée.
+                </p>
               </div>
             </div>
           </div>
