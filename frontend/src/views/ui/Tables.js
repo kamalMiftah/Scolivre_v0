@@ -164,7 +164,7 @@ const Tables = () => {
             {successMessage && (
               <Alert color="success" toggle={() => setSuccessMessage("")}>
                 {successMessage}
-              </Alert>
+              </Alegit rt>
             )}
             <CardTitle tag="h5" className="border-bottom p-3 mb-0 fw-bold">
               <i className="bi bi-bell me-2"> </i>
