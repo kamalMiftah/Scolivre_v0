@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import ProjectTables from "../../components/dashboard/ProjectTable";
 import {
@@ -18,14 +18,14 @@ import {
 import { useAuth } from "../../AuthContext"; // Adjust the path based on your project structure
 
 const Tables = () => {
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [selectedClient, setSelectedClient] = useState(null);
   const [clients, setClients] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
 
   // Fetch clients data
-  const fetchClients = async () => {
+  const fetchClients = useCallback(async () => {
     if (!isAuthenticated) {
       console.error("User is not authenticated");
       return;
@@ -50,7 +50,7 @@ const Tables = () => {
       .catch((error) => {
         console.error("Error fetching clients:", error);
       });
-  };
+  }, [isAuthenticated]);
 
   useEffect(() => {
     fetchClients();
@@ -61,7 +61,7 @@ const Tables = () => {
       setSuccessMessage(storedMessage);
       localStorage.removeItem("successMessage"); // Clear it after displaying
     }
-  }, [isAuthenticated]);
+  }, [fetchClients]);
 
   const handleClientClick = (client) => {
     setSelectedClient(client);

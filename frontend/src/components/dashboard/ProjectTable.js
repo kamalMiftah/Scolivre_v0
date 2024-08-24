@@ -2,20 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
 
-// Function to authenticate and get the token
-export const authenticate = async () => {
-  try {
-    const response = await axios.post("http://localhost:8000/api/token/", {
-      email: "sepheiba@gmail.com",
-      password: "areon130",
-    });
-    return response.data.access;
-  } catch (error) {
-    console.error("Error authenticating:", error);
-    return null;
-  }
-};
-
 // Function to fetch data from the API
 export const fetchData = async (token) => {
   try {
@@ -37,7 +23,7 @@ const ProjectTables = ({ onClientClick }) => {
 
   useEffect(() => {
     const loadData = async () => {
-      const token = await authenticate();
+      const token = localStorage.getItem("token");
       if (token) {
         const data = await fetchData(token);
         console.log("Fetched Data:", data); // Print the fetched data
