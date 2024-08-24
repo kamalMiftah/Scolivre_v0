@@ -11,7 +11,7 @@ class Form extends React.Component {
       city: "",
       comment: "",
       file: null,
-      fileName: "No file chosen",
+      fileName: "Aucun fichier choisi",
       currentStep: 1,
       errors: {},
     };
@@ -27,7 +27,7 @@ class Form extends React.Component {
     const file = event.target.files[0];
     this.setState({
       file: file,
-      fileName: file ? file.name : "No file chosen",
+      fileName: file ? file.name : "Aucun fichier choisi",
     });
   };
 
@@ -39,7 +39,7 @@ class Form extends React.Component {
       city: "",
       comment: "",
       file: null,
-      fileName: "No file chosen",
+      fileName: "Aucun fichier choisi",
       currentStep: 1,
       errors: {},
     });
@@ -88,13 +88,13 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.name.length === 0) {
-        errors["name"] = "Full Name is required"; // Set error message
+        errors["name"] = "Nom complet requis"; // Set error message
       }
       console.log(this.state.phone.length);
       if (this.state.phone.length === 0) {
-        errors["phone"] = "Phone Number is required"; // Set error message
+        errors["phone"] = "Numéro de téléphone requis"; // Set error message
       } else if (!phoneRegex.test(this.state.phone)) {
-        errors["phone"] = "Phone number is incorrect"; // Set error message
+        errors["phone"] = "Numéro de téléphone incorrect"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -107,10 +107,10 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.city.length === 0) {
-        errors["city"] = "City is required"; // Set error message
+        errors["city"] = "Ville requise"; // Set error message
       }
       if (this.state.address.length === 0) {
-        errors["address"] = "Home Address is required"; // Set error message
+        errors["address"] = "Adresse requise"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -187,7 +187,7 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.file === null) {
-        errors["file"] = "File is required"; // Set error message
+        errors["file"] = "Fichier requis"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -227,7 +227,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["name"]
                   ? this.state.errors["name"]
-                  : "Full Name"
+                  : "Nom complet"
               }
               required
             />
@@ -243,7 +243,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["phone"]
                   ? this.state.errors["phone"]
-                  : "Phone Number (e.g. 0612345678)"
+                  : "Numéro de téléphone (e.g. 0612345678)"
               }
               required
             />
@@ -253,7 +253,7 @@ class Form extends React.Component {
               onClick={this.nextformpart}
               className="btn w-100 form-button btn-primary"
             >
-              Next
+              Suivant
             </button>
           </div>
         </div>
@@ -269,7 +269,7 @@ class Form extends React.Component {
               name="city"
               value={this.state.city}
               onChange={this.handleChange}
-              placeholder="City"
+              placeholder="Ville"
               required
             />
           </div>
@@ -281,7 +281,7 @@ class Form extends React.Component {
               name="address"
               value={this.state.address}
               onChange={this.handleChange}
-              placeholder="Home Address"
+              placeholder="Adresse"
               required
             />
           </div>
@@ -290,13 +290,13 @@ class Form extends React.Component {
               onClick={this.prevformpart}
               className="btn w-100 form-button btn-secondary me-3"
             >
-              Back
+              Retour
             </button>
             <button
               onClick={this.nextformpart}
               className="btn w-100 form-button btn-primary"
             >
-              Next
+              Suivant
             </button>
           </div>
         </div>
@@ -312,7 +312,7 @@ class Form extends React.Component {
               name="comment"
               value={this.state.comment}
               onChange={this.handleChange}
-              placeholder="Comment"
+              placeholder="Commentaire"
               rows="3"
             />
           </div>
@@ -323,7 +323,7 @@ class Form extends React.Component {
                 htmlFor="file"
                 role="button"
               >
-                Chose File
+                Choisir un fichier
               </label>
               <label
                 className={`form-control form-control-22 ${this.state.errors["file"] && "incorrect"}`}
@@ -348,13 +348,13 @@ class Form extends React.Component {
               onClick={this.prevformpart}
               className="btn w-100 form-button btn-secondary me-3"
             >
-              Back
+              Retour
             </button>
             <button
               onClick={this.handleSubmit}
               className="btn w-100 submit-button btn-primary"
             >
-              Submit
+              Terminer
             </button>
           </div>
         </div>
@@ -362,12 +362,14 @@ class Form extends React.Component {
     } else if (this.state.currentStep === 4) {
       return (
         <div className="form-content py-3">
-          <p className="fs-7">Thank you, form submitted.</p>
+          <p className="fs-7">
+            Merci <br /> formulaire soumis.
+          </p>
           <button
             onClick={this.handleBack}
             className="btn w-100 submit-button btn-primary"
           >
-            Back
+            Retour
           </button>
         </div>
       );
