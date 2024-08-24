@@ -12,8 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
-from decouple import Config, config, Csv
+from decouple import config
 import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -178,3 +179,14 @@ CORS_ORIGIN_WHITELIST = (
 'http://localhost:3000',
 'http://localhost:8000',
 )
+
+
+# Configuring django for Gmail SMTP server.
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465  # Use 465 for SSL or 587 for TLS
+EMAIL_USE_SSL = True  # Use True for SSL
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

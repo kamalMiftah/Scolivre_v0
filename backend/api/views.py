@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .models import Command
 from .models import User
@@ -35,7 +37,30 @@ class CommandViewSet(viewsets.ModelViewSet):
         return [JWTAuthentication()]  # Use JWT authentication for other requests
     
     def perform_create(self, serializer):
-        serializer.save()
+        command = serializer.save()
+
+        # Prepare email details
+        subject = 'New Command Received'
+        message = f"""
+        A new command has been received with the following details:
+
+        Name: {command.name}
+        Phone Number: {command.phone_number}
+        City: {command.city}
+        Address: {command.home_address}
+        Comment: {command.comment_client}
+        Order State: {command.order_state}
+        Image URL: {command.image.url}
+
+        Thank you,
+        Hello School
+        """
+        from_email = settings.DEFAULT_FROM_EMAIL  # Set this in your Django settings
+        recipient_list = ['kamalmiftah01@gmail.com']  # Replace with the actual recipient's email address
+
+        # Send email
+        send_mail(subject, message, from_email, recipient_list)
+
 
 
 class UserViewSet(viewsets.ModelViewSet):
