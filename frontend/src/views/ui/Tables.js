@@ -27,7 +27,7 @@ const Tables = () => {
   // Fetch clients data
   const fetchClients = useCallback(async () => {
     if (!isAuthenticated) {
-      console.error("User is not authenticated");
+      // console.error("User is not authenticated");
       return;
     }
 
@@ -48,7 +48,7 @@ const Tables = () => {
         }
       })
       .catch((error) => {
-        console.error("Error fetching clients:", error);
+        // console.error("Error fetching clients:", error);
       });
   }, [isAuthenticated]);
 
@@ -112,7 +112,7 @@ const Tables = () => {
         window.location.reload(); // Reload the page
       })
       .catch((error) => {
-        console.error("Error updating client:", error);
+        // console.error("Error updating client:", error);
       });
   };
 

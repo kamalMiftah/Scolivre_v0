@@ -10,10 +10,10 @@ export const fetchData = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("API Response:", response.data); // Print the full API response
+    // console.log("API Response:", response.data); // Print the full API response
     return response.data.results;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    // console.error("Error fetching data:", error);
     return [];
   }
 };
@@ -26,7 +26,7 @@ const ProjectTables = ({ onClientClick }) => {
       const token = localStorage.getItem("token");
       if (token) {
         const data = await fetchData(token);
-        console.log("Fetched Data:", data); // Print the fetched data
+        // console.log("Fetched Data:", data); // Print the fetched data
         setTableData(data);
       }
     };

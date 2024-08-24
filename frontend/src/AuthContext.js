@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       const token = localStorage.getItem("token");
-      console.log("Token retrieved:", token); // Debugging log
+      // console.log("Token retrieved:", token); // Debugging log
 
       if (token) {
         try {
@@ -24,15 +24,15 @@ export const AuthProvider = ({ children }) => {
           );
 
           if (response.ok) {
-            console.log("Token is valid"); // Debugging log
+            // console.log("Token is valid"); // Debugging log
             setIsAuthenticated(true);
           } else {
-            console.log("Token is invalid or expired"); // Debugging log
+            // console.log("Token is invalid or expired"); // Debugging log
             setIsAuthenticated(false);
             localStorage.removeItem("token");
           }
         } catch (error) {
-          console.error("Error verifying token", error);
+          // console.error("Error verifying token", error);
           setIsAuthenticated(false);
           localStorage.removeItem("token");
         }
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
         return false;
       }
     } catch (error) {
-      console.error("Error logging in", error);
+      // console.error("Error logging in", error);
       setIsAuthenticated(false);
       return false;
     }
