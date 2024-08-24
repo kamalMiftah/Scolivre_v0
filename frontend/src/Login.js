@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap CSS is imported
 
 const Login = () => {
@@ -8,26 +8,20 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { isAuthenticated, login } = useAuth();
 
   useEffect(() => {
-    // Check if a token exists in localStorage
-    const token = localStorage.getItem("token");
-    if (token) {
-      navigate("/admin"); // Redirect to admin page if a token exists
+    if (isAuthenticated) {
+      navigate("/admin"); // Redirect to admin page if authenticated
     }
-  }, [navigate]);
+  }, [isAuthenticated, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8000/api/token/", {
-        email: username, // Assuming username corresponds to email in API
-        password,
-      });
-      const token = response.data.access;
-      localStorage.setItem("token", token);
+    const success = await login(username, password);
+    if (success) {
       navigate("/admin"); // Redirect to admin page after successful login
-    } catch (error) {
+    } else {
       setError("Invalid credentials. Please try again.");
     }
   };
@@ -71,28 +65,11 @@ const Login = () => {
                         required
                       />
                     </div>
-                    <div className="row mb-3">
-                      <div className="col-6">
-                        <div className="form-check text-start">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="remember-me"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="remember-me"
-                          >
-                            Remember Me
-                          </label>
-                        </div>
+                    {error && (
+                      <div className="alert alert-danger" role="alert">
+                        {error}
                       </div>
-                      <div className="col-6">
-                        <div className="text-end">
-                          <a href="#">Forgot Password?</a>
-                        </div>
-                      </div>
-                    </div>
+                    )}
                     <div className="">
                       <input
                         type="submit"

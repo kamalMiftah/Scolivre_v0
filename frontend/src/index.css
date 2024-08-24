@@ -19,7 +19,7 @@
     z-index: 100;
 }
 
-.nav-link.active {
+#navbarNav > ul > li:nth-child(n) > .nav-link.active {
     background-color: #deb76e !important;
 }
 

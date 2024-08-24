@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext"; // Import UserContext
 import {
   Navbar,
   Collapse,
@@ -25,7 +27,7 @@ const handleLogout = () => {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [user, setUser] = useState(null); // State to hold user data
+  const { userName } = useContext(UserContext); // Use context to get userName
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -35,45 +37,24 @@ const Header = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        if (token) {
-          const response = await fetch("http://127.0.0.1:8000/api/users/", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-          });
-          const data = await response.json();
-          // Assuming the response contains user data at index 0
-          setUser(data[0]);
-        }
-      } catch (error) {
-        console.error("Error fetching user data", error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
   return (
     <Navbar color="primary" dark expand="md" className="fix-header">
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
-          <Logo />
+          <NavbarBrand className="text-white" href="#">
+            Brand
+          </NavbarBrand>{" "}
+          {/* Replace with Bootstrap brand */}
         </div>
-        <NavbarBrand href="/">
-          <LogoWhite className=" d-lg-none" />
+        <NavbarBrand href="/" className="d-lg-none">
+          <LogoWhite className="d-lg-none" />
         </NavbarBrand>
         <Button
           color="primary"
-          className=" d-lg-none"
+          className="d-lg-none"
           onClick={() => showMobilemenu()}
         >
-          <i className="bi bi-list"></i>
+          } ><i className="bi bi-list"></i>
         </Button>
       </div>
       <div className="hstack gap-2">
@@ -94,26 +75,15 @@ const Header = () => {
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
           <NavItem>
-            <Link to="/starter" className="nav-link">
-              Starter
+            <Link to="/Admin" className="nav-link">
+              Admin
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/about" className="nav-link">
-              About
+            <Link to="/" className="nav-link">
+              Home
             </Link>
           </NavItem>
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="transparent">
@@ -126,9 +96,8 @@ const Header = () => {
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem>
-              {user ? `Hello, ${user.first_name}` : "Loading..."}
+              {userName ? `Hello, ${userName}` : "Loading..."}
             </DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
             <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
