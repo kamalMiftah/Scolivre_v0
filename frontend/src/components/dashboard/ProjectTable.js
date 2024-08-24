@@ -44,6 +44,7 @@ const ProjectTables = ({ onClientClick }) => {
         setTableData(data);
       }
     };
+
     loadData();
   }, []);
 
