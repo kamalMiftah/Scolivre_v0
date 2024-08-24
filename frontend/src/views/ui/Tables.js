@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ProjectTables, {
-  authenticate,
-} from "../../components/dashboard/ProjectTable";
+import ProjectTables from "../../components/dashboard/ProjectTable";
 import {
   Row,
   Col,
@@ -17,8 +15,10 @@ import {
   Table,
   Alert,
 } from "reactstrap";
+import { useAuth } from "../../AuthContext"; // Adjust the path based on your project structure
 
 const Tables = () => {
+  const { isAuthenticated, login } = useAuth();
   const [selectedClient, setSelectedClient] = useState(null);
   const [clients, setClients] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
@@ -26,7 +26,12 @@ const Tables = () => {
 
   // Fetch clients data
   const fetchClients = async () => {
-    const token = await authenticate();
+    if (!isAuthenticated) {
+      console.error("User is not authenticated");
+      return;
+    }
+
+    const token = localStorage.getItem("token");
     axios
       .get("http://localhost:8000/api/commands/", {
         headers: {
@@ -48,7 +53,6 @@ const Tables = () => {
   };
 
   useEffect(() => {
-    // Fetch clients data to populate the first table
     fetchClients();
 
     // Retrieve the success message from localStorage (if any)
@@ -57,7 +61,7 @@ const Tables = () => {
       setSuccessMessage(storedMessage);
       localStorage.removeItem("successMessage"); // Clear it after displaying
     }
-  }, []);
+  }, [isAuthenticated]);
 
   const handleClientClick = (client) => {
     setSelectedClient(client);
@@ -81,7 +85,7 @@ const Tables = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const clientId = selectedClient.command_id;
-    const token = await authenticate();
+    const token = localStorage.getItem("token");
 
     const formData = new FormData();
     formData.append("name", selectedClient.name);
@@ -293,7 +297,6 @@ const Tables = () => {
                     name="order_state"
                     value={selectedClient.order_state || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter order state"
                     type="select"
                   >
                     <option value="PENDING">Pending</option>
@@ -302,19 +305,18 @@ const Tables = () => {
                     <option value="CANCELLED">Cancelled</option>
                   </Input>
                 </FormGroup>
-                {/*
-                  <FormGroup>
-                    <Label for="image">Image</Label>
-                    <Input
-                      id="image"
-                      name="image"
-                      onChange={handleFileChange}
-                      placeholder="Upload image"
-                      type="file"
-                    />
-                  </FormGroup>
-                  */}
-                <Button type="submit">Update Client</Button>
+                <FormGroup>
+                  <Label for="file">Upload File</Label>
+                  <Input
+                    id="file"
+                    name="file"
+                    type="file"
+                    onChange={handleFileChange}
+                  />
+                </FormGroup>
+                <Button color="primary" type="submit">
+                  Update Order
+                </Button>
               </Form>
             </CardBody>
           </Card>

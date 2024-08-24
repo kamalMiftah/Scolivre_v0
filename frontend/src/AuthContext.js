@@ -1,4 +1,3 @@
-// AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
@@ -9,27 +8,33 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       const token = localStorage.getItem("token");
+      console.log("Token retrieved:", token); // Debugging log
+
       if (token) {
         try {
           const response = await fetch(
-            "http://127.0.0.1:8000/api/verify-token/",
+            "http://localhost:8000/api/token/verify/",
             {
-              method: "GET",
+              method: "POST", // The endpoint expects a POST request
               headers: {
-                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
               },
+              body: JSON.stringify({ token }), // Send the token in the request body
             },
           );
+
           if (response.ok) {
+            console.log("Token is valid"); // Debugging log
             setIsAuthenticated(true);
           } else {
+            console.log("Token is invalid or expired"); // Debugging log
             setIsAuthenticated(false);
             localStorage.removeItem("token");
           }
         } catch (error) {
           console.error("Error verifying token", error);
           setIsAuthenticated(false);
+          localStorage.removeItem("token");
         }
       } else {
         setIsAuthenticated(false);
@@ -49,6 +54,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email: username, password }),
       });
       const data = await response.json();
+
       if (response.ok) {
         const token = data.access;
         localStorage.setItem("token", token);
@@ -65,10 +71,13 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+  };
+
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, setIsAuthenticated, login }}
-    >
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
