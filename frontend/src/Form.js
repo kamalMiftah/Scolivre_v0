@@ -243,7 +243,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["phone"]
                   ? this.state.errors["phone"]
-                  : "Phone Number"
+                  : "Phone Number (e.g. 0612345678)"
               }
               required
             />
