@@ -348,34 +348,35 @@ function Home() {
             <div className="row mt-3">
               <div className="col-md-5 col-lg-6 col-xl-5 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>Company name
+                  <i className="fas fa-gem me-3"></i>BrightSchooling
                 </h6>
                 <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
+                  Nous fournissons aux élèves des fournitures scolaires de haute
+                  qualité et des ressources essentielles. Recevez tout ce dont
+                  vous avez besoin pour une année scolaire réussie, livré
+                  directement chez vous.
                 </p>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                 <p>
                   <a href="#!" className="text-reset">
-                    Pricing
+                    Accueil
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Settings
+                    Comment ça marche?
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Orders
+                    À propos
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Help
+                    Nous Contacter
                   </a>
                 </p>
               </div>
@@ -389,7 +390,7 @@ function Home() {
                   info@example.com
                 </p>
                 <p>
-                  <i className="fas fa-phone me-3"></i> + 212 600 000 000 
+                  <i className="fas fa-phone me-3"></i> + 212 600 000 000
                 </p>
                 <p>
                   <i className="fas fa-print me-3"></i> + 212 600 000 000
