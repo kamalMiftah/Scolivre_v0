@@ -33,7 +33,7 @@ function Nav2() {
                 spy={true}
                 offset={-60}
               >
-                Home
+                Accueil
               </Link>
             </li>
 
@@ -57,7 +57,7 @@ function Nav2() {
                 spy={true}
                 offset={-60}
               >
-                About
+                À propos
               </Link>
             </li>
           </ul>

@@ -32,7 +32,7 @@ function Nav() {
                 to="home-section"
                 spy={true}
               >
-                Home
+                Accueil
               </Link>
             </li>
 
@@ -56,7 +56,7 @@ function Nav() {
                 spy={true}
                 offset={-60}
               >
-                About
+                À propos
               </Link>
             </li>
           </ul>
