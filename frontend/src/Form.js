@@ -90,27 +90,10 @@ class Form extends React.Component {
       if (this.state.name.length === 0) {
         errors["name"] = "Nom complet requis"; // Set error message
       }
-      console.log(this.state.phone.length);
       if (this.state.phone.length === 0) {
         errors["phone"] = "Numéro de téléphone requis"; // Set error message
       } else if (!phoneRegex.test(this.state.phone)) {
         errors["phone"] = "Numéro de téléphone incorrect"; // Set error message
-      }
-      if (Object.keys(errors).length > 0) {
-        this.setState({ errors });
-      } else {
-        this.setState({ errors: {} });
-        nextAnimation();
-      }
-    }
-    if (this.state.currentStep === 2) {
-      const errors = {}; // Create a new errors object
-
-      if (this.state.city.length === 0) {
-        errors["city"] = "Ville requise"; // Set error message
-      }
-      if (this.state.address.length === 0) {
-        errors["address"] = "Adresse requise"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -179,13 +162,19 @@ class Form extends React.Component {
 
       // Update state as needed
       this.setState({
-        currentStep: 4,
+        currentStep: 3,
       });
     };
 
-    if (this.state.currentStep === 3) {
+    if (this.state.currentStep === 2) {
       const errors = {}; // Create a new errors object
 
+      if (this.state.city.length === 0) {
+        errors["city"] = "Ville requise"; // Set error message
+      }
+      if (this.state.address.length === 0) {
+        errors["address"] = "Adresse requise"; // Set error message
+      }
       if (this.state.file === null) {
         errors["file"] = "Fichier requis"; // Set error message
       }
@@ -285,25 +274,6 @@ class Form extends React.Component {
               required
             />
           </div>
-          <div className="d-flex justify-content-between">
-            <button
-              onClick={this.prevformpart}
-              className="btn w-100 form-button btn-secondary me-3"
-            >
-              Retour
-            </button>
-            <button
-              onClick={this.nextformpart}
-              className="btn w-100 form-button btn-primary"
-            >
-              Suivant
-            </button>
-          </div>
-        </div>
-      );
-    } else if (this.state.currentStep === 3) {
-      return (
-        <div className="form-content">
           <div className="mb-3">
             <input
               className="comment-form form-control form-control-22"
@@ -354,12 +324,12 @@ class Form extends React.Component {
               onClick={this.handleSubmit}
               className="btn w-100 submit-button btn-primary"
             >
-              Terminer
+              Commander
             </button>
           </div>
         </div>
       );
-    } else if (this.state.currentStep === 4) {
+    } else if (this.state.currentStep === 3) {
       return (
         <div className="form-content py-3">
           <p className="fs-7">
