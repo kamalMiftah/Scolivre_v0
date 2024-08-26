@@ -320,153 +320,118 @@ function Home() {
         </div>
       </div>
 
-      <footer className="bg-black">
-        <div className="py-3 py-md-5 py-xl-8 py-xxl-10">
-          <div className="container">
-            <div className="row gy-4 gy-md-0">
-              <div className="col-12 col-md-6">
-                <div className="link-wrapper">
-                  <ul className="m-0 list-unstyled">
-                    <li>
-                      <a
-                        href="#!"
-                        className="link-opacity-75-hover text-decoration-none link-light fs-1 lh-sm"
-                      >
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#!"
-                        className="link-opacity-75-hover text-decoration-none link-light fs-1 lh-sm"
-                      >
-                        Comment ça marche?
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#!"
-                        className="link-opacity-75-hover text-decoration-none link-light fs-1 lh-sm"
-                      >
-                        About
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+      <footer className="text-center text-lg-start bg-body-tertiary text-muted">
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <div className="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+          </div>
+          <div>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-google"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="" className="me-4 text-reset">
+              <i className="fab fa-github"></i>
+            </a>
+          </div>
+        </section>
+        <section className="">
+          <div className="container text-center text-md-start mt-5">
+            <div className="row mt-3">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">
+                  <i className="fas fa-gem me-3"></i>Company name
+                </h6>
+                <p>
+                  Here you can use rows and columns to organize your footer
+                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit.
+                </p>
               </div>
-              <div className="col-12 col-md-6">
-                <section className="mb-4 mb-lg-5 mb-xl-7">
-                  <div className="row">
-                    <div className="col-6">
-                      <div className="address-wrapper">
-                        <h4 className="mb-3 h5 text-white">Head Office</h4>
-                        <address className="mb-3 fs-7 text-light opacity-75">
-                          69323 Swaniawski Forest <br />
-                          North Aronfort, Alabama, 26323
-                        </address>
-                        <p className="m-0">
-                          <a
-                            className="fs-7 link-light link-opacity-75 link-opacity-100-hover text-decoration-none"
-                            href="tel:+1-479-589-0693"
-                          >
-                            1-479-589-0693
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div className="address-wrapper">
-                        <h4 className="mb-3 h5 text-white">Branch Office</h4>
-                        <address className="mb-3 fs-7 text-light opacity-75">
-                          166 McGlynn Overpass Suite <br />
-                          Elisabethside, Minnesota, 55755
-                        </address>
-                        <p className="m-0">
-                          <a
-                            className="fs-7 link-light link-opacity-75 link-opacity-100-hover text-decoration-none"
-                            href="tel:+540-284-4036"
-                          >
-                            540-284-4036
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <section>
-                  <div className="row">
-                    <div className="col-6">
-                      <div className="address-wrapper">
-                        <h4 className="mb-3 h5 text-white">Warehouse</h4>
-                        <address className="m-0 fs-7 text-light opacity-75">
-                          88329 Dach Grove Apt. <br />
-                          West Bretton, Carolina, 81706
-                        </address>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div className="social-media-wrapper">
-                        <h4 className="mb-3 h5 text-white">Connect</h4>
-                        <ul className="m-0 list-unstyled d-flex justify-content-start gap-3">
-                          <li>
-                            <a
-                              href="#!"
-                              className="link-opacity-75 link-opacity-100-hover link-light"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="currentColor"
-                                className="bi bi-facebook"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                              </svg>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#!"
-                              className="link-opacity-75 link-opacity-100-hover link-light"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="currentColor"
-                                className="bi bi-twitter"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
-                              </svg>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#!"
-                              className="link-opacity-75 link-opacity-100-hover link-light"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="currentColor"
-                                className="bi bi-linkedin"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                              </svg>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Angular
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    React
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Vue
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Laravel
+                  </a>
+                </p>
+              </div>
+              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Pricing
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Settings
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Orders
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Help
+                  </a>
+                </p>
+              </div>
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                <p>
+                  <i className="fas fa-home me-3"></i> New York, NY 10012, US
+                </p>
+                <p>
+                  <i className="fas fa-envelope me-3"></i>
+                  info@example.com
+                </p>
+                <p>
+                  <i className="fas fa-phone me-3"></i> + 01 234 567 88
+                </p>
+                <p>
+                  <i className="fas fa-print me-3"></i> + 01 234 567 89
+                </p>
               </div>
             </div>
           </div>
+        </section>
+        <div
+          className="text-center p-4"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+        >
+          © 2021 Copyright:
+          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
+            MDBootstrap.com
+          </a>
         </div>
       </footer>
     </div>
