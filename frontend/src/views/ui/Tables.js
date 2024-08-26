@@ -27,7 +27,7 @@ const Tables = () => {
   // Fetch clients data
   const fetchClients = useCallback(async () => {
     if (!isAuthenticated) {
-      // console.error("User is not authenticated");
+      // console.error("L'utilisateur n'est pas authentifié");
       return;
     }
 
@@ -48,7 +48,7 @@ const Tables = () => {
         }
       })
       .catch((error) => {
-        // console.error("Error fetching clients:", error);
+        // console.error("Erreur lors de la récupération des clients :", error);
       });
   }, [isAuthenticated]);
 
@@ -107,12 +107,12 @@ const Tables = () => {
         },
       })
       .then((response) => {
-        localStorage.setItem("successMessage", "Client updated successfully!");
+        localStorage.setItem("successMessage", "Client mis à jour avec succès !");
         localStorage.setItem("selectedClient", JSON.stringify(selectedClient));
         window.location.reload(); // Reload the page
       })
       .catch((error) => {
-        // console.error("Error updating client:", error);
+        // console.error("Erreur lors de la mise à jour du client :", error);
       });
   };
 
@@ -155,12 +155,12 @@ const Tables = () => {
               <Table bordered striped className="table-full-width">
                 <thead>
                   <tr>
-                    <th>Full Name</th>
-                    <th>Phone Number</th>
-                    <th>City</th>
-                    <th>Address</th>
-                    <th>Comment Client</th>
-                    <th>Order State</th>
+                    <th>Nom</th>
+                    <th>Numéro de Téléphone</th>
+                    <th>Ville</th>
+                    <th>Adresse</th>
+                    <th>Commentaire du Client</th>
+                    <th>État de la Commande</th>
                     <th>Image</th>
                   </tr>
                 </thead>
@@ -182,22 +182,23 @@ const Tables = () => {
                     </td>
                     <td>
                       {selectedClient.order_state === "PENDING"
-                        ? "Pending"
+                        ? "En attente"
                         : selectedClient.order_state === "PROCESSING"
-                          ? "Processing"
-                          : selectedClient.order_state === "COMPLETED"
-                            ? "Completed"
-                            : selectedClient.order_state === "CANCELLED"
-                              ? "Cancelled"
-                              : null}
+                        ? "En cours"
+                        : selectedClient.order_state === "COMPLETED"
+                        ? "Terminée"
+                        : selectedClient.order_state === "CANCELLED"
+                        ? "Annulée"
+                        : null}
                     </td>
+
                     <td>
                       <a
                         href={selectedClient.image}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Download Requirements File
+                        Télécharger le Fichier
                       </a>
                     </td>
                   </tr>
@@ -220,78 +221,78 @@ const Tables = () => {
               <Form onSubmit={handleSubmit}>
                 <FormGroup>
                   <Label for="name" className="">
-                    Full Name
+                    Nom
                   </Label>
                   <Input
                     id="name"
                     name="name"
                     value={selectedClient.name || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter full name"
+                    placeholder="Entrez le nom complet"
                     type="text"
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="phone_number">Phone Number</Label>
+                  <Label for="phone_number">Numéro de Téléphone</Label>
                   <Input
                     id="phone_number"
                     name="phone_number"
                     value={selectedClient.phone_number || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter phone number"
+                    placeholder="Entrez le numéro de téléphone"
                     type="text"
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="city">City</Label>
+                  <Label for="city">Ville</Label>
                   <Input
                     id="city"
                     name="city"
                     value={selectedClient.city || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter city"
+                    placeholder="Entrez la ville"
                     type="text"
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="home_address">Address</Label>
+                  <Label for="home_address">Adresse</Label>
                   <Input
                     id="home_address"
                     name="home_address"
                     value={selectedClient.home_address || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter address"
+                    placeholder="Entrez l'adresse"
                     type="text"
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="comment_client">Comment Client</Label>
+                  <Label for="comment_client">Commentaire du Client</Label>
                   <Input
                     id="comment_client"
                     name="comment_client"
                     value={selectedClient.comment_client || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter client comment"
+                    placeholder="Entrez le commentaire du client"
                     type="textarea"
                     rows="4" // Adjust the number of rows based on the desired height
                     style={{ whiteSpace: "pre-wrap" }}
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="comment_admin">Comment Admin</Label>
+                  <Label for="comment_admin">Commentaire de l'Admin</Label>
                   <Input
                     id="comment_admin"
                     name="comment_admin"
                     value={selectedClient.comment_admin || ""}
                     onChange={handleInputChange}
-                    placeholder="Enter admin comment"
+                    placeholder="Entrez le commentaire de l'admin"
                     type="textarea"
                     rows="4" // Adjust the number of rows based on the desired height
                     style={{ whiteSpace: "pre-wrap" }}
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="order_state">Order State</Label>
+                  <Label for="order_state">État de la Commande</Label>
                   <Input
                     id="order_state"
                     name="order_state"
@@ -299,23 +300,23 @@ const Tables = () => {
                     onChange={handleInputChange}
                     type="select"
                   >
-                    <option value="PENDING">Pending</option>
-                    <option value="PROCESSING">Processing</option>
-                    <option value="COMPLETED">Completed</option>
-                    <option value="CANCELLED">Cancelled</option>
+                    <option value="PENDING">En attente</option>
+                    <option value="PROCESSING">En cours</option>
+                    <option value="COMPLETED">Terminée</option>
+                    <option value="CANCELLED">Annulée</option>
                   </Input>
                 </FormGroup>
                 <FormGroup>
-                  <Label for="file">Upload File</Label>
+                  <Label for="image">Image (choisir un fichier)</Label>
                   <Input
-                    id="file"
-                    name="file"
+                    id="image"
+                    name="image"
                     type="file"
                     onChange={handleFileChange}
                   />
                 </FormGroup>
-                <Button color="primary" type="submit">
-                  Update Order
+                <Button type="submit" color="primary">
+                  Mettre à jour
                 </Button>
               </Form>
             </CardBody>

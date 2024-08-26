@@ -15,7 +15,7 @@ from .serializers import CommandSerializer, UserSerializer
 
 
 class CommandPagination(PageNumberPagination):
-    page_size = 25  # Default page size
+    page_size = 5  # Default page size
     page_size_query_param = 'page_size'  # Client can control page size with this query parameter
     max_page_size = 100  # Maximum page size allowed
 
