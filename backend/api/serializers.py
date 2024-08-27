@@ -14,7 +14,7 @@ class CommandSerializer(serializers.ModelSerializer):
     )
 
     def validate_image(self, value):
-        max_size = 2 * 1024 * 1024  # 2 MB
+        max_size = 10 * 1024 * 1024  # 10 MB
         if value.size > max_size:
             raise ValidationError(f"Image file size should not exceed {max_size / (1024 * 1024)} MB.")
         return value
