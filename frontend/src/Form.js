@@ -18,6 +18,11 @@ class Form extends React.Component {
   }
 
   handleChange = (event) => {
+    const target = event.target;
+    if (target.classList.contains("incorrect")) {
+      target.classList.remove("incorrect");
+    }
+
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -25,10 +30,17 @@ class Form extends React.Component {
 
   handleFileChange = (event) => {
     const file = event.target.files[0];
-    this.setState({
-      file: file,
-      fileName: file ? file.name : "Aucun fichier choisi",
-    });
+    if (file.size > 10 * 1024 * 1024) {
+      this.setState({
+        errors: { file: "Taille Max: 10 Mo ⚠" },
+      });
+    } else {
+      this.setState({
+        file: file,
+        fileName: file ? file.name : this.state.errors["file"],
+        errors: { file: "" },
+      });
+    }
   };
 
   handleBack = () => {
@@ -88,12 +100,12 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.name.length === 0) {
-        errors["name"] = "Nom complet requis"; // Set error message
+        errors["name"] = "Nom complet requis ⚠";
       }
       if (this.state.phone.length === 0) {
-        errors["phone"] = "Numéro de téléphone requis"; // Set error message
+        errors["phone"] = "Numéro de téléphone requis ⚠"; // Set error message
       } else if (!phoneRegex.test(this.state.phone)) {
-        errors["phone"] = "Numéro de téléphone incorrect"; // Set error message
+        errors["phone"] = "Numéro de téléphone incorrect ⚠"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -170,16 +182,13 @@ class Form extends React.Component {
       const errors = {}; // Create a new errors object
 
       if (this.state.city.length === 0) {
-        errors["city"] = "Ville requise"; // Set error message
+        errors["city"] = "Ville requise ⚠"; // Set error message
       }
       if (this.state.address.length === 0) {
-        errors["address"] = "Adresse requise"; // Set error message
+        errors["address"] = "Adresse requise ⚠"; // Set error message
       }
       if (this.state.file === null) {
-        errors["file"] = "Fichier requis"; // Set error message
-      }
-      if (this.state.file.size > 10 * 1024 * 1024) {
-        errors["file"] = "Max 10 Mo"; // Set error message
+        errors["file"] = "Aucun fichier choisi ⚠"; // Set error message
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -261,7 +270,9 @@ class Form extends React.Component {
               name="city"
               value={this.state.city}
               onChange={this.handleChange}
-              placeholder="Ville"
+              placeholder={
+                this.state.errors["city"] ? this.state.errors["city"] : "Ville"
+              }
               required
             />
           </div>
@@ -273,7 +284,11 @@ class Form extends React.Component {
               name="address"
               value={this.state.address}
               onChange={this.handleChange}
-              placeholder="Adresse"
+              placeholder={
+                this.state.errors["address"]
+                  ? this.state.errors["address"]
+                  : "Adresse"
+              }
               required
             />
           </div>
@@ -304,7 +319,9 @@ class Form extends React.Component {
                 htmlFor="file"
                 role="button"
               >
-                {this.state.fileName}
+                {this.state.errors["file"]
+                  ? this.state.errors["file"]
+                  : this.state.fileName}
               </label>
               <input
                 type="file"
@@ -312,7 +329,7 @@ class Form extends React.Component {
                 id="file"
                 name="file"
                 onChange={this.handleFileChange}
-                accept="image/*"
+                accept=".pdf, image/*"
               />
             </div>
           </div>

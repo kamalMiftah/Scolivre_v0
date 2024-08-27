@@ -341,19 +341,19 @@
 
 .incorrect {
     background-color: #f3edf4 !important;
-    color: #321a34 !important;
-    border-color: #dcc9dd !important;
+    color: #d74a49 !important;
+    border-color: #d74a49 !important;
 }
 
 .incorrect::placeholder {
-    color: #a172a5 !important; /* Placeholder text color */
+    color: #d74a49 !important; /* Placeholder text color */
     font-weight: 300;
 }
 
 .incorrect-d-none {
     background-color: #e8dbe8 !important;
     color: #321a34 !important;
-    border-color: #dcc9dd !important;
+    border-color: #d74a49 !important;
 }
 
 @media (max-width: 992px) {
