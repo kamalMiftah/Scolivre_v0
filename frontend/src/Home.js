@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import Form from "./Form";
 import Nav from "./Nav";
 import Nav2 from "./Nav2";
@@ -360,24 +361,71 @@ function Home() {
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                 <p>
-                  <a href="#!" className="text-reset">
-                    Accueil
-                  </a>
+                  <button
+                    className="text-reset btn-link"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      color: "inherit",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link
+                      activeClass="active"
+                      to="home-section"
+                      spy={true}
+                      offset={-60}
+                    >
+                      Accueil
+                    </Link>
+                  </button>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
-                    Comment ça marche?
-                  </a>
+                  <button
+                    className="text-reset btn-link"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      color: "inherit",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link
+                      activeClass="active"
+                      to="marche-section"
+                      spy={true}
+                      offset={-60}
+                    >
+                      Comment ça marche?
+                    </Link>
+                  </button>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
-                    À propos
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Nous Contacter
-                  </a>
+                  <button
+                    className="text-reset btn-link"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      color: "inherit",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link
+                      activeClass="active"
+                      to="about-section"
+                      spy={true}
+                      offset={-60}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      À propos
+                    </Link>
+                  </button>
                 </p>
               </div>
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
