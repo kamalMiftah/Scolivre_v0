@@ -221,13 +221,13 @@
 
 .submit-button {
     font-weight: 700 !important;
-    background-color: #8a508f !important;
+    background-color: #bc5090 !important;
     border: 0 !important;
-    color: #f3edf4 !important;
+    color: #faedf4 !important;
 }
 
 .submit-button:hover {
-    background-color: #96619a !important;
+    background-color: #c4629b !important;
 }
 
 #file-label {

@@ -332,14 +332,22 @@ class Form extends React.Component {
     } else if (this.state.currentStep === 3) {
       return (
         <div className="form-content py-3">
-          <p className="fs-7">
-            Merci <br /> formulaire soumis.
-          </p>
+          <div class="alert alert-success" role="alert">
+            <div class="d-flex gap-4">
+              <span>
+                <i class="fa-solid fa-circle-check icon-success"></i>
+              </span>
+              <div>
+                Votre commande a été envoyée avec succès. Nous vous contacterons
+                bientôt pour plus de détails.
+              </div>
+            </div>
+          </div>
           <button
             onClick={this.handleBack}
-            className="btn w-100 submit-button btn-primary"
+            className="btn w-100 form-button btn-primary"
           >
-            Retour
+            Terminer
           </button>
         </div>
       );
