@@ -18,13 +18,9 @@ class Form extends React.Component {
   }
 
   handleChange = (event) => {
-    const target = event.target;
-    if (target.classList.contains("incorrect")) {
-      target.classList.remove("incorrect");
-    }
-
     this.setState({
       [event.target.name]: event.target.value,
+      errors: { [event.target.name]: "" },
     });
   };
 
@@ -43,6 +39,24 @@ class Form extends React.Component {
     }
   };
 
+  handleKeyPress = (e) => {
+    if (e.key === "Enter" && this.state.currentStep === 1) {
+      e.preventDefault();
+      this.nextformpart(e);
+    } else if (e.key === "Enter" && this.state.currentStep === 2) {
+      e.preventDefault();
+      this.handleSubmit(e);
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKeyPress);
+  }
+
   handleBack = () => {
     this.setState({
       name: "",
@@ -59,7 +73,7 @@ class Form extends React.Component {
 
   nextformpart = (event) => {
     event.preventDefault();
-    const phoneRegex = /^0[5-7][0-9]{8}$/;
+    const phoneRegex = /^(?:\+?212|0)[567][0-9]{8}$/;
     this.setState((prevState) => ({
       errors: {}, // Use a colon to assign the empty object
     }));
@@ -106,6 +120,7 @@ class Form extends React.Component {
         errors["phone"] = "Numéro de téléphone requis ⚠"; // Set error message
       } else if (!phoneRegex.test(this.state.phone)) {
         errors["phone"] = "Numéro de téléphone incorrect ⚠"; // Set error message
+        this.setState({ phone: "" });
       }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
@@ -199,20 +214,6 @@ class Form extends React.Component {
     }
   };
 
-  handleKeyPress = (e) => {
-    // Handle Enter key
-    if (e.key === "Enter") {
-      e.preventDefault(); // Prevent default Enter behavior (like form submission)
-      this.nextformpart();
-    }
-
-    // Handle Backspace key
-    if (e.key === "Backspace") {
-      e.preventDefault(); // Prevent default Backspace behavior (like deleting text)
-      this.prevformpart();
-    }
-  };
-
   render() {
     if (this.state.currentStep === 1) {
       return (
@@ -228,7 +229,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["name"]
                   ? this.state.errors["name"]
-                  : "Nom complet"
+                  : "Nom complet ＊"
               }
               required
             />
@@ -244,7 +245,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["phone"]
                   ? this.state.errors["phone"]
-                  : "Numéro de téléphone (e.g. 0612345678)"
+                  : "Numéro de téléphone ＊"
               }
               required
             />
@@ -271,7 +272,9 @@ class Form extends React.Component {
               value={this.state.city}
               onChange={this.handleChange}
               placeholder={
-                this.state.errors["city"] ? this.state.errors["city"] : "Ville"
+                this.state.errors["city"]
+                  ? this.state.errors["city"]
+                  : "Ville ＊"
               }
               required
             />
@@ -287,7 +290,7 @@ class Form extends React.Component {
               placeholder={
                 this.state.errors["address"]
                   ? this.state.errors["address"]
-                  : "Adresse"
+                  : "Adresse ＊"
               }
               required
             />
@@ -321,7 +324,7 @@ class Form extends React.Component {
               >
                 {this.state.errors["file"]
                   ? this.state.errors["file"]
-                  : this.state.fileName}
+                  : this.state.fileName + " ＊"}
               </label>
               <input
                 type="file"
