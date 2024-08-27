@@ -10,8 +10,14 @@ class CommandSerializer(serializers.ModelSerializer):
     # image_url = serializers.ImageField(required=True)
     image = serializers.ImageField(
         required=True, 
-        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])]
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'pdf'])]
     )
+
+    def validate_image(self, value):
+        max_size = 2 * 1024 * 1024  # 2 MB
+        if value.size > max_size:
+            raise ValidationError(f"Image file size should not exceed {max_size / (1024 * 1024)} MB.")
+        return value
 
     class Meta:
         model = Command
