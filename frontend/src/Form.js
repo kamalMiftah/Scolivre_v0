@@ -59,7 +59,7 @@ class Form extends React.Component {
             currentStep: oldState.currentStep + 1,
           }));
           gsap.fromTo(
-            ".form-content *",
+            ".form-content",
             {
               x: "20", // Start from the right side
               opacity: 0,
@@ -75,7 +75,7 @@ class Form extends React.Component {
         },
       });
 
-      tl.to(".form-content *", {
+      tl.to(".form-content", {
         x: -20,
         opacity: 0,
         duration: 0.1,
@@ -113,7 +113,7 @@ class Form extends React.Component {
           currentStep: oldState.currentStep - 1,
         }));
         gsap.fromTo(
-          ".form-content *",
+          ".form-content",
           {
             x: "-20", // Start from the right side
             opacity: 0,
@@ -129,7 +129,7 @@ class Form extends React.Component {
       },
     });
 
-    tl.to(".form-content *", {
+    tl.to(".form-content", {
       x: 20,
       opacity: 0,
       duration: 0.1,
@@ -332,10 +332,10 @@ class Form extends React.Component {
     } else if (this.state.currentStep === 3) {
       return (
         <div className="form-content py-3">
-          <div class="alert alert-success" role="alert">
-            <div class="d-flex gap-4">
+          <div className="alert alert-success" role="alert">
+            <div className="d-flex gap-4">
               <span>
-                <i class="fa-solid fa-circle-check icon-success"></i>
+                <i className="fa-solid fa-circle-check icon-success"></i>
               </span>
               <div>
                 Votre commande a été envoyée avec succès. Nous vous contacterons
