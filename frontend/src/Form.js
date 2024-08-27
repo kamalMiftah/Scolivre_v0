@@ -178,6 +178,9 @@ class Form extends React.Component {
       if (this.state.file === null) {
         errors["file"] = "Fichier requis"; // Set error message
       }
+      if (this.state.file.size > 10 * 1024 * 1024) {
+        errors["file"] = "Max 10 Mo"; // Set error message
+      }
       if (Object.keys(errors).length > 0) {
         this.setState({ errors });
       } else {
