@@ -5,8 +5,9 @@ function Nav() {
   return (
     <nav className="fixed-mobile navbar navbar-stylo navbar-expand-lg navbar-dark shadow w-100 m-0">
       <div className="container justify-content-between">
-        <a className="navbar-brand p-0 mx-4" href="#">
-          Scolivre
+        <a className="navbar-brand p-0 mx-4" href="#home-section">
+          <span className="fs-4 font-more-sugar">Sco</span>
+          <span className="fs-5 font-finger-paint">livre</span>
         </a>
 
         <button

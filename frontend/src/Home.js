@@ -45,7 +45,13 @@ function Home() {
           <Nav />
           {showNav2 && <Nav2 />} {/* Conditionally render Nav2 */}
           <p className="main-heading display-5 mt-4 pt-3 pb-0 mb-0 mx-4">
-            Préparez la rentrée facilement !<br /> Commandez, nous livrons.
+            Préparez la rentrée facilement avec
+            <span className="display-4 font-more-sugar font-animation">
+              {" "}
+              Sco
+            </span>
+            <span className="font-finger-paint font-animation">livre </span>
+            Commandez, nous livrons.
           </p>
           <p className="second-heading fs-5 pt-3">
             Remplissez le formulaire ci-dessous avec la liste des fournitures

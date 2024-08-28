@@ -1,3 +1,5 @@
+@import "./fonts/fonts.css";
+
 .navbar-stylo {
     margin-top: 15px;
     border-radius: 24px;
@@ -5,21 +7,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    background-color: #be9c5d;
-    z-index: 10;
-}
-
-.navbar-logo {
-    height: 38px; /* Adjust the size of the logo */
-    margin-top: -11px;
-    margin-bottom: -9px;
-    position: relative;
-    z-index: 10;
-}
-
-.navbar-logo-2 {
-    height: 50px; /* Adjust the size of the logo */
-    position: relative;
+    background-color: #ffeecf;
     z-index: 10;
 }
 
@@ -29,12 +17,25 @@
     margin-left: auto;
     margin-right: auto;
 
-    background-color: #be9c5d;
+    background-color: #ffeecf;
     z-index: 100;
 }
 
 #navbarNav > ul > li:nth-child(n) > .nav-link.active {
     background-color: #deb76e !important;
+}
+
+/* Define font classes */
+.font-more-sugar {
+    font-family: "More Sugar", sans-serif;
+    font-weight: bold; /* Adjust as needed */
+    color: #dd72a6 !important;
+}
+
+.font-finger-paint {
+    font-family: "Finger Paint", sans-serif;
+    font-weight: bold; /* Adjust as needed */
+    color: #3fb7b7 !important;
 }
 
 .pattern-div {
@@ -201,7 +202,7 @@
 }
 
 .menu-button:hover {
-    background-color: #9e824d !important;
+    background-color: #ffd380 !important;
     color: #030201 !important;
 }
 
