@@ -56,10 +56,17 @@ class CommandViewSet(viewsets.ModelViewSet):
         Hello School
         """
         from_email = settings.DEFAULT_FROM_EMAIL  # Set this in your Django settings
-        recipient_list = ['Helloschoolmaroc@gmail.com']  # Replace with the actual recipient's email address
+        recipient_list = ['helloschoolmaroc@gmail.com']  # Replace with the actual recipient's email address
 
         # Send email
         send_mail(subject, message, from_email, recipient_list)
+        try:
+            send_mail(subject, message, from_email, recipient_list)
+            print("Email sent successfully.")
+        except BadHeaderError:
+            print("Invalid header found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
 
 
