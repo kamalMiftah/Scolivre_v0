@@ -56,7 +56,7 @@ class CommandViewSet(viewsets.ModelViewSet):
         Hello School
         """
         from_email = settings.DEFAULT_FROM_EMAIL  # Set this in your Django settings
-        recipient_list = ['kamalmiftah01@gmail.com']  # Replace with the actual recipient's email address
+        recipient_list = ['Helloschoolmaroc@gmail.com']  # Replace with the actual recipient's email address
 
         # Send email
         send_mail(subject, message, from_email, recipient_list)

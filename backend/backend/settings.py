@@ -175,6 +175,13 @@ SPECTACULAR_SETTINGS = {
 AUTH_USER_MODEL = 'api.User'
 
 
+ALLOWED_HOSTS = [
+    'scolivre.com',
+    'www.scolivre.com',
+    'localhost',
+    '127.0.0.1',
+]
+
 CORS_ALLOWED_ORIGINS = [
     'https://scolivre.com',
     'http://localhost',
@@ -182,7 +189,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://www.scolivre.com',
     'http://scolivre.com',
 ]
-
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
@@ -197,6 +203,8 @@ CORS_ORIGIN_WHITELIST = (
 
 CSRF_TRUSTED_ORIGINS = [
     'https://scolivre.com',
+    'scolivre.com',
+    'www.scolivre.com',
     'https://scolivre.com',
     'http://localhost',
     'https://scolivre.com',
