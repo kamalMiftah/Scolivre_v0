@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import Form from "./Form";
 import Nav from "./Nav";
 import Nav2 from "./Nav2";
-import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { animateElements } from "./gsapAnimations";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -328,39 +328,54 @@ function Home() {
         </div>
       </div>
 
-      <footer className="text-center text-lg-start bg-body-tertiary text-muted">
-        <section className="d-flex justify-content-center p-4 border-bottom">
-          <div>
-            <a
-              href="https://www.facebook.com/profile.php?id=61564771660124"
-              className="me-4 text-reset"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            {/* <a href="" className="me-4 text-reset">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="" className="me-4 text-reset">
-              <i className="fab fa-google"></i>
-            </a>
-            <a href="" className="me-4 text-reset">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="" className="me-4 text-reset">
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="" className="me-4 text-reset">
-              <i className="fab fa-github"></i>
-            </a> */}
+      <footer
+        className="text-center text-lg-start text-white"
+        style={{ backgroundColor: "#1c2331" }}
+      >
+        <section style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+          <div className="container d-flex justify-content-between p-4">
+            <div className="me-5">
+              <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+              <a
+                href="https://wa.me/212719871193"
+                className="text-white me-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="mailto:scolivremaroc@gmail.com"
+                className="text-white me-4"
+              >
+                <i className="fas fa-envelope"></i>
+              </a>
+              <a
+                href="https://www.facebook.com"
+                className="text-white me-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-facebook"></i>
+              </a>
+            </div>
           </div>
         </section>
-        <section className="">
+        <section>
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">
-              <div className="col-md-5 col-lg-6 col-xl-5 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>Scolivre
-                </h6>
+              <div className="col-md-4 col-lg-6 col-xl-4 mx-auto mb-4">
+                <h6 className="text-uppercase fw-bold">Company name</h6>
+                <hr
+                  className="mb-4 mt-0 d-inline-block mx-auto"
+                  style={{
+                    width: "60px",
+                    backgroundColor: "#7c4dff",
+                    height: "2px",
+                  }}
+                />
                 <p>
                   Nous fournissons aux élèves des fournitures scolaires de haute
                   qualité et des ressources essentielles. Recevez tout ce dont
@@ -368,107 +383,76 @@ function Home() {
                   directement chez vous.
                 </p>
               </div>
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Liens utiles</h6>
+
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <a href="#home-section" className="text-white">
+                  <h6 className="text-uppercase fw-bold">Accueil</h6>
+                </a>
+
+                <hr
+                  className="mb-4 mt-0 d-inline-block mx-auto"
+                  style={{
+                    width: "60px",
+                    backgroundColor: "#7c4dff",
+                    height: "2px",
+                  }}
+                />
                 <p>
-                  <button
-                    className="text-reset btn-link"
-                    style={{
-                      background: "none",
-                      border: "none",
-                      padding: 0,
-                      color: "inherit",
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Link
-                      activeClass="active"
-                      to="home-section"
-                      spy={true}
-                      offset={-60}
-                    >
-                      Accueil
-                    </Link>
-                  </button>
+                  <a href="#marche-section" className="text-white">
+                    Comment ça marche?
+                  </a>
                 </p>
                 <p>
-                  <button
-                    className="text-reset btn-link"
-                    style={{
-                      background: "none",
-                      border: "none",
-                      padding: 0,
-                      color: "inherit",
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Link
-                      activeClass="active"
-                      to="marche-section"
-                      spy={true}
-                      offset={-60}
-                    >
-                      Comment ça marche?
-                    </Link>
-                  </button>
-                </p>
-                <p>
-                  <button
-                    className="text-reset btn-link"
-                    style={{
-                      background: "none",
-                      border: "none",
-                      padding: 0,
-                      color: "inherit",
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Link
-                      activeClass="active"
-                      to="about-section"
-                      spy={true}
-                      offset={-60}
-                      style={{ color: "inherit", textDecoration: "none" }}
-                    >
-                      À propos
-                    </Link>
-                  </button>
+                  <a href="#about-section" className="text-white">
+                    À propos
+                  </a>
                 </p>
               </div>
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+
+              <div className="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+                <h6 className="text-uppercase fw-bold">Contact</h6>
+                <hr
+                  className="mb-4 mt-0 d-inline-block mx-auto"
+                  style={{
+                    width: "60px",
+                    backgroundColor: "#7c4dff",
+                    height: "2px",
+                  }}
+                />
                 <p>
-                  <i className="fas fa-home me-3"></i> Maroc, CA 10012,MA
+                  <i className="fas fa-home mr-3"></i> Maroc, CA 10012, MA
                 </p>
                 <p>
-                  <i className="fas fa-envelope me-3"></i>
-                  scolivremaroc@gmail.com
+                  <a
+                    href="mailto:scolivremaroc@gmail.com"
+                    className="text-white"
+                  >
+                    <i className="fas fa-envelope mr-3"></i>{" "}
+                    scolivremaroc@gmail.com
+                  </a>
                 </p>
                 <p>
-                  <i className="fas fa-phone me-3"></i> + 212 719-871193
-                </p>
-                <p>
-                  <i className="fas fa-print me-3"></i> + 212 719-871193
+                  <a href="tel:+212719871193" className="text-white">
+                    <i className="fas fa-phone mr-3"></i> +212 719-871193
+                  </a>
                 </p>
               </div>
             </div>
           </div>
         </section>
         <div
-          className="text-center p-4"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+          className="text-center p-3"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           © 2024 Copyright:
-          <a className="text-reset fw-bold" href="https://scolivre.com/">
+          <a className="text-white" href="https://mdbootstrap.com/">
             scolivre.com
           </a>
         </div>
       </footer>
+
       <FloatingWhatsApp
-        phoneNumber=" + 212 688995302" // Replace with your WhatsApp number
+        phoneNumber=" + 212 719-871193" // Replace with your WhatsApp number
         accountName="Scolivre" // Your account name or business name
         allowClickAway
         notification

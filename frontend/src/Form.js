@@ -40,16 +40,6 @@ class Form extends React.Component {
     }
   };
 
-  handleKeyPress = (e) => {
-    if (e.key === "Enter" && this.state.currentStep === 1) {
-      e.preventDefault();
-      this.nextformpart(e);
-    } else if (e.key === "Enter" && this.state.currentStep === 2) {
-      e.preventDefault();
-      this.handleSubmit(e);
-    }
-  };
-
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyPress);
   }
