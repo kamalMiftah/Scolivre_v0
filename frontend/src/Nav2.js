@@ -6,7 +6,11 @@ function Nav2() {
     <nav className="navbar navbar-stylo-2 position-fixed navbar-expand-lg navbar-dark shadow w-100 py-3 m-0">
       <div className="container justify-content-between">
         <a className="navbar-brand p-0 mx-4" href="#">
-          BrightSchooling
+          <img
+            src="/images/logo2.png" // Path to your logo image
+            alt="Scolivre Logo"
+            className="navbar-logo-2"
+          />
         </a>
 
         <button

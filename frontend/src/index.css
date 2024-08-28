@@ -9,6 +9,20 @@
     z-index: 10;
 }
 
+.navbar-logo {
+    height: 38px; /* Adjust the size of the logo */
+    margin-top: -11px;
+    margin-bottom: -9px;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-logo-2 {
+    height: 50px; /* Adjust the size of the logo */
+    position: relative;
+    z-index: 10;
+}
+
 .navbar-stylo-2 {
     top: 0;
 
