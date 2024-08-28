@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'api.middleware.CsrfExemptMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -174,11 +175,35 @@ SPECTACULAR_SETTINGS = {
 AUTH_USER_MODEL = 'api.User'
 
 
+CORS_ALLOWED_ORIGINS = [
+    'https://scolivre.com',
+    'http://localhost',
+    'https://www.scolivre.com',
+    'http://www.scolivre.com',
+    'http://scolivre.com',
+]
+
 
 CORS_ORIGIN_WHITELIST = (
-'http://localhost:3000',
-'http://localhost:8000',
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://scolivre.com',
+    'https://www.scolivre.com',
+    'http://www.scolivre.com',
+    'http://scolivre.com',
+    'scolivre.com'
+    'www.scolivre.com',
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://scolivre.com',
+    'https://scolivre.com',
+    'http://localhost',
+    'https://scolivre.com',
+    'https://www.scolivre.com',
+    'http://www.scolivre.com',
+    'http://scolivre.com',
+]
 
 
 # Configuring django for Gmail SMTP server.
