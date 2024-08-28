@@ -16,6 +16,7 @@ import {
   Alert,
 } from "reactstrap";
 import { useAuth } from "../../AuthContext"; // Adjust the path based on your project structure
+import API_BASE_URL from "../../config";
 
 const Tables = () => {
   const { isAuthenticated } = useAuth();
@@ -33,7 +34,7 @@ const Tables = () => {
 
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/commands/", {
+      .get(`${API_BASE_URL}/api/commands/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -100,14 +101,17 @@ const Tables = () => {
 
     // Perform the PATCH request to update the client information
     axios
-      .patch(`http://localhost:8000/api/commands/${clientId}/`, formData, {
+      .patch(`${API_BASE_URL}/api/commands/${clientId}/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
-        localStorage.setItem("successMessage", "Client mis à jour avec succès !");
+        localStorage.setItem(
+          "successMessage",
+          "Client mis à jour avec succès !",
+        );
         localStorage.setItem("selectedClient", JSON.stringify(selectedClient));
         window.location.reload(); // Reload the page
       })
@@ -184,12 +188,12 @@ const Tables = () => {
                       {selectedClient.order_state === "PENDING"
                         ? "En attente"
                         : selectedClient.order_state === "PROCESSING"
-                        ? "En cours"
-                        : selectedClient.order_state === "COMPLETED"
-                        ? "Terminée"
-                        : selectedClient.order_state === "CANCELLED"
-                        ? "Annulée"
-                        : null}
+                          ? "En cours"
+                          : selectedClient.order_state === "COMPLETED"
+                            ? "Terminée"
+                            : selectedClient.order_state === "CANCELLED"
+                              ? "Annulée"
+                              : null}
                     </td>
 
                     <td>

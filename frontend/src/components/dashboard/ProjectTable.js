@@ -8,17 +8,21 @@ import {
   Table,
   Pagination,
   PaginationItem,
-  PaginationLink
+  PaginationLink,
 } from "reactstrap";
+import API_BASE_URL from "./../../config";
 
 // Fonction pour récupérer les données depuis l'API
 export const fetchData = async (token, page = 1) => {
   try {
-    const response = await axios.get(`http://localhost:8000/api/commands/?page=${page}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const response = await axios.get(
+      `${API_BASE_URL}/api/commands/?page=${page}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
     return response.data;
   } catch (error) {
     return { results: [], count: 0 };
@@ -58,7 +62,11 @@ const ProjectTables = ({ onClientClick }) => {
             Surveillez, modifiez et gérez les commandes des clients.
           </CardSubtitle>
 
-          <Table className="table-full-width no-wrap mt-3 align-middle" responsive borderless>
+          <Table
+            className="table-full-width no-wrap mt-3 align-middle"
+            responsive
+            borderless
+          >
             <thead>
               <tr>
                 <th>Nom</th>
@@ -116,7 +124,10 @@ const ProjectTables = ({ onClientClick }) => {
           {/* Contrôles de Pagination */}
           <Pagination className="d-flex justify-content-center">
             <PaginationItem disabled={currentPage === 1}>
-              <PaginationLink previous onClick={() => handlePageClick(currentPage - 1)} />
+              <PaginationLink
+                previous
+                onClick={() => handlePageClick(currentPage - 1)}
+              />
             </PaginationItem>
             {[...Array(totalPages)].map((_, i) => (
               <PaginationItem active={i + 1 === currentPage} key={i}>
@@ -126,7 +137,10 @@ const ProjectTables = ({ onClientClick }) => {
               </PaginationItem>
             ))}
             <PaginationItem disabled={currentPage === totalPages}>
-              <PaginationLink next onClick={() => handlePageClick(currentPage + 1)} />
+              <PaginationLink
+                next
+                onClick={() => handlePageClick(currentPage + 1)}
+              />
             </PaginationItem>
           </Pagination>
         </CardBody>

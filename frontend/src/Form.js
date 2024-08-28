@@ -1,5 +1,6 @@
 import React from "react";
 import { gsap } from "gsap";
+import API_BASE_URL from "./config";
 
 class Form extends React.Component {
   constructor(props) {
@@ -182,7 +183,7 @@ class Form extends React.Component {
         body: form,
       };
 
-      fetch("http://127.0.0.1:8000/api/commands/", models_options)
+      fetch(`${API_BASE_URL}/api/commands/`, models_options)
         .then((response) => response.json())
         .then((response) => console.log(response))
         .catch((err) => console.error(err));

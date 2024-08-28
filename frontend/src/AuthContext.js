@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import API_BASE_URL from "./config";
 
 const AuthContext = createContext();
 
@@ -12,16 +13,13 @@ export const AuthProvider = ({ children }) => {
 
       if (token) {
         try {
-          const response = await fetch(
-            "http://localhost:8000/api/token/verify/",
-            {
-              method: "POST", // The endpoint expects a POST request
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ token }), // Send the token in the request body
+          const response = await fetch(`${API_BASE_URL}/api/token/verify/`, {
+            method: "POST", // The endpoint expects a POST request
+            headers: {
+              "Content-Type": "application/json",
             },
-          );
+            body: JSON.stringify({ token }), // Send the token in the request body
+          });
 
           if (response.ok) {
             // console.log("Token is valid"); // Debugging log
@@ -46,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await fetch("http://localhost:8000/api/token/", {
+      const response = await fetch(`${API_BASE_URL}/api/token/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
