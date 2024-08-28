@@ -46,7 +46,7 @@ function Home() {
           {showNav2 && <Nav2 />} {/* Conditionally render Nav2 */}
           <p className="main-heading display-5 mt-4 pt-3 pb-0 mb-0 mx-4">
             Préparez la rentrée facilement avec
-            <span className="display-4 font-more-sugar font-animation">
+            <span className="display-3 font-more-sugar font-animation">
               {" "}
               Sco
             </span>
@@ -272,7 +272,7 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-5 order-1 order-lg-2 px-5 mt-5 d-flex justify-content-center">
+              <div className="col-12 col-lg-5 order-1 order-lg-2 px-0 mt-5 d-flex justify-content-center">
                 <img
                   src="images/7060732.png"
                   alt="About Us"
