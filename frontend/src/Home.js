@@ -324,10 +324,13 @@ function Home() {
       <footer className="text-center text-lg-start bg-body-tertiary text-muted">
         <section className="d-flex justify-content-center p-4 border-bottom">
           <div>
-            <a href="" className="me-4 text-reset">
+            <a
+              href="https://www.facebook.com/profile.php?id=61564771660124"
+              className="me-4 text-reset"
+            >
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="" className="me-4 text-reset">
+            {/* <a href="" className="me-4 text-reset">
               <i className="fab fa-twitter"></i>
             </a>
             <a href="" className="me-4 text-reset">
@@ -341,7 +344,7 @@ function Home() {
             </a>
             <a href="" className="me-4 text-reset">
               <i className="fab fa-github"></i>
-            </a>
+            </a> */}
           </div>
         </section>
         <section className="">
@@ -349,7 +352,7 @@ function Home() {
             <div className="row mt-3">
               <div className="col-md-5 col-lg-6 col-xl-5 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>BrightSchooling
+                  <i className="fas fa-gem me-3"></i>Scolivre
                 </h6>
                 <p>
                   Nous fournissons aux élèves des fournitures scolaires de haute
@@ -359,7 +362,7 @@ function Home() {
                 </p>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Liens utiles</h6>
                 <p>
                   <button
                     className="text-reset btn-link"
@@ -435,13 +438,13 @@ function Home() {
                 </p>
                 <p>
                   <i className="fas fa-envelope me-3"></i>
-                  info@example.com
+                  scolivremaroc@gmail.com
                 </p>
                 <p>
-                  <i className="fas fa-phone me-3"></i> + 212 600 000 000
+                  <i className="fas fa-phone me-3"></i> + 212 719-871193
                 </p>
                 <p>
-                  <i className="fas fa-print me-3"></i> + 212 600 000 000
+                  <i className="fas fa-print me-3"></i> + 212 719-871193
                 </p>
               </div>
             </div>
@@ -452,8 +455,8 @@ function Home() {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         >
           © 2024 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            brightschooling.com
+          <a className="text-reset fw-bold" href="https://scolivre.com/">
+            scolivre.com
           </a>
         </div>
       </footer>
