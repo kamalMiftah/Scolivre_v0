@@ -353,7 +353,7 @@ function Home() {
                 <i className="fas fa-envelope"></i>
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61564771660124"
                 className="text-white me-4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -420,7 +420,7 @@ function Home() {
                   }}
                 />
                 <p>
-                  <i className="fas fa-home mr-3"></i> Maroc, CA 10012, MA
+                  <i className="fas fa-home mr-3"></i> Maroc, Casablanca
                 </p>
                 <p>
                   <a
