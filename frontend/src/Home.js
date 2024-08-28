@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import Form from "./Form";
 import Nav from "./Nav";
 import Nav2 from "./Nav2";
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import { animateElements } from "./gsapAnimations";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -466,6 +467,15 @@ function Home() {
           </a>
         </div>
       </footer>
+      <FloatingWhatsApp
+        phoneNumber=" + 212 688995302" // Replace with your WhatsApp number
+        accountName="Scolivre" // Your account name or business name
+        allowClickAway
+        notification
+        notificationDelay={10000} // Notification delay in milliseconds
+        chatboxHeight={400} // Height of the chatbox
+        style={{ bottom: 20, right: 20 }} // Custom styles if needed
+      />
     </div>
   );
 }
