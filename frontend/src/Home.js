@@ -272,7 +272,7 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-5 order-1 order-lg-2 px-0 mt-5 d-flex justify-content-center">
+              <div className="col-12 col-lg-5 order-1 order-lg-2 px-4 px-xl-5 mt-5 d-flex justify-content-center">
                 <img
                   src="images/7060732.png"
                   alt="About Us"
