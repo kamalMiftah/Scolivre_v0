@@ -134,7 +134,7 @@ function Home() {
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Remplissez Vos Informations de Livraison:{" "}
+                      Remplissez Vos Informations de Livraison :{" "}
                     </span>
                   </p>
                   <p className="second-section-feature-text fs-6">
@@ -145,7 +145,7 @@ function Home() {
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Ajoutez des Détails Supplémentaires:
+                      Ajoutez des Détails Supplémentaires :
                     </span>
                   </p>
                   <p className="second-section-feature-text fs-6">
@@ -155,7 +155,7 @@ function Home() {
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Téléchargez la Photo des Fournitures:
+                      Téléchargez la Photo des Fournitures :
                     </span>
                   </p>
                   <p className="second-section-feature-text fs-6">
@@ -166,7 +166,7 @@ function Home() {
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Soumettez Votre Commande:
+                      Soumettez Votre Commande :
                     </span>
                   </p>
                   <p className="second-section-feature-text fs-6">
@@ -335,20 +335,22 @@ function Home() {
         <section style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
           <div className="container d-flex justify-content-between p-4">
             <div className="me-5">
-              <span>Get connected with us on social networks:</span>
+              <span>Restez connecté avec nous sur les réseaux sociaux :</span>
             </div>
-            <div>
+            <div className="d-flex justify-content-between">
               <a
                 href="https://wa.me/212719871193"
                 className="text-white me-4"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ marginRight: "10px" }}
               >
                 <i className="fab fa-whatsapp"></i>
               </a>
               <a
                 href="mailto:scolivremaroc@gmail.com"
                 className="text-white me-4"
+                style={{ marginRight: "10px" }}
               >
                 <i className="fas fa-envelope"></i>
               </a>
@@ -367,7 +369,7 @@ function Home() {
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">
               <div className="col-md-4 col-lg-6 col-xl-4 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Company name</h6>
+                <h6 className="text-uppercase fw-bold">Scolivre</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
                   style={{
@@ -445,9 +447,7 @@ function Home() {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           © 2024 Copyright:
-          <a className="text-white" href="https://mdbootstrap.com/">
-            scolivre.com
-          </a>
+          <a className="text-white">scolivre.com</a>
         </div>
       </footer>
 
