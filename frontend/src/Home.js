@@ -166,7 +166,7 @@ function Home() {
                   <p className="second-section-feature-text lh-sm fs-5 my-2">
                     <span className="d-inline-flex align-items-center">
                       <i className="icon-color-section2-2 fas fa-info-circle fa-sm me-3"></i>
-                      Soumettez Votre Commande :
+                      Soumettez votre commande et recevez un devis :
                     </span>
                   </p>
                   <p className="second-section-feature-text fs-6">
