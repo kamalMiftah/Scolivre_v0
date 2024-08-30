@@ -328,126 +328,64 @@ function Home() {
         </div>
       </div>
 
-      <footer
-        className="text-center text-lg-start text-white"
-        style={{ backgroundColor: "#1c2331" }}
-      >
-        <section style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-          <div className="container d-flex justify-content-between p-4">
-            <div className="me-5">
-              <span>Restez connecté avec nous sur les réseaux sociaux :</span>
-            </div>
-            <div className="d-flex justify-content-between">
-              <a
-                href="https://wa.me/212719871193"
-                className="text-white me-4"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ marginRight: "10px" }}
-              >
-                <i className="fab fa-whatsapp"></i>
-              </a>
-              <a
-                href="mailto:scolivremaroc@gmail.com"
-                className="text-white me-4"
-                style={{ marginRight: "10px" }}
-              >
-                <i className="fas fa-envelope"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61564771660124"
-                className="text-white me-4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-facebook"></i>
-              </a>
-            </div>
-          </div>
-        </section>
-        <section>
-          <div className="container text-center text-md-start mt-5">
-            <div className="row mt-3">
-              <div className="col-md-4 col-lg-6 col-xl-4 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Scolivre</h6>
-                <hr
-                  className="mb-4 mt-0 d-inline-block mx-auto"
-                  style={{
-                    width: "60px",
-                    backgroundColor: "#7c4dff",
-                    height: "2px",
-                  }}
-                />
-                <p>
-                  Nous fournissons aux élèves des fournitures scolaires de haute
-                  qualité et des ressources essentielles. Recevez tout ce dont
-                  vous avez besoin pour une année scolaire réussie, livré
-                  directement chez vous.
-                </p>
-              </div>
-
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <a href="#home-section" className="text-white">
-                  <h6 className="text-uppercase fw-bold">Accueil</h6>
-                </a>
-
-                <hr
-                  className="mb-4 mt-0 d-inline-block mx-auto"
-                  style={{
-                    width: "60px",
-                    backgroundColor: "#7c4dff",
-                    height: "2px",
-                  }}
-                />
-                <p>
-                  <a href="#marche-section" className="text-white">
-                    Comment ça marche?
-                  </a>
-                </p>
-                <p>
-                  <a href="#about-section" className="text-white">
-                    À propos
-                  </a>
-                </p>
-              </div>
-
-              <div className="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold">Contact</h6>
-                <hr
-                  className="mb-4 mt-0 d-inline-block mx-auto"
-                  style={{
-                    width: "60px",
-                    backgroundColor: "#7c4dff",
-                    height: "2px",
-                  }}
-                />
-                <p>
-                  <i className="fas fa-home mr-3"></i> Maroc, Casablanca
-                </p>
-                <p>
+      <footer className="bg-dark text-center text-lg-start text-white">
+        <div className="container p-4 pb-0">
+          <div className="row mt-4">
+            {/* Write to Us Section */}
+            <div className="col-lg-12 col-md-12 mb-4 mb-md-0 text-center">
+              <h5 className="text-uppercase">ÉCRIVEZ-NOUS</h5>
+              <ul className="list-unstyled">
+                <li>
                   <a
                     href="mailto:scolivremaroc@gmail.com"
                     className="text-white"
                   >
-                    <i className="fas fa-envelope mr-3"></i>{" "}
+                    <i className="fas fa-at fa-fw fa-sm me-2"></i>
                     scolivremaroc@gmail.com
                   </a>
-                </p>
-                <p>
+                </li>
+                <li>
                   <a href="tel:+212719871193" className="text-white">
-                    <i className="fas fa-phone mr-3"></i> +212 719-871193
+                    <i className="fas fa-phone fa-fw fa-sm me-2"></i>
+                    +212 719-871193
                   </a>
-                </p>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
+        </div>
+
+        <section className="mb-4 text-center">
+          <a
+            className="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/profile.php?id=61564771660124"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="button"
+          >
+            <i className="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            className="btn btn-outline-light btn-floating m-1"
+            href="mailto:scolivremaroc@gmail.com"
+            role="button"
+          >
+            <i className="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            className="btn btn-outline-light btn-floating m-1"
+            href="tel:+212719871193"
+            role="button"
+          >
+            <i className="fa-solid fa-phone"></i>
+          </a>
         </section>
+
         <div
           className="text-center p-3"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          © 2024 Copyright:
-          <a className="text-white">scolivre.com</a>
+          © 2024 Copyright: <a className="text-white">scolivre.com</a>
         </div>
       </footer>
 

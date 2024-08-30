@@ -13,6 +13,7 @@
     "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5",
+    "next": "^14.2.7",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
@@ -29,6 +30,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "next dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
