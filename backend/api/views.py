@@ -50,7 +50,7 @@ class CommandViewSet(viewsets.ModelViewSet):
         Address: {command.home_address}
         Comment: {command.comment_client}
         Order State: {command.order_state}
-        Image URL: {command.image.url}
+        Image URL: scolivre.com/{command.image.url}
 
         Thank you,
         Hello School
