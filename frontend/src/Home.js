@@ -46,28 +46,30 @@ function Home() {
           <Nav />
           {showNav2 && <Nav2 />} {/* Conditionally render Nav2 */}
           <p className="main-heading display-5 mt-4 pt-3 pb-0 mb-0 mx-4">
-            Préparez la rentrée facilement avec
+            Acheter des fournitures scolaires n’a jamais été aussi simple
+            qu’avec
             <span className="display-3 font-more-sugar font-animation">
               {" "}
               Sco
             </span>
             <span className="font-finger-paint font-animation">livre </span>
-            Commandez, nous livrons.
           </p>
-          <p className="second-heading fs-5 pt-3">
-            Remplissez le formulaire ci-dessous avec la liste des fournitures
-            nécessaires, <br />
-            et nous nous occupons du reste.
+          <p className="second-heading fs-5 pt-1">
+            Merci de bien vouloir remplir le formulaire ci-dessous avec la liste
+            des fournitures.
           </p>
           <img
             src="images/340619-PAIHI0-347.png"
             alt=""
             className="responsive-image sm-75 md-50 lg-25 xl-25"
           />
-          <div className="form-container shadow p-4 mb-4">
-            <form id="my-form" className="m-2">
-              <Form />
-            </form>
+          <div className="first-container shadow">
+            <p className="form-heading mb-2 pt-3">Commandez maintenant!</p>
+            <div className="form-container zigzag-top p-4 pt-3">
+              <form id="my-form" className="m-2">
+                <Form />
+              </form>
+            </div>
           </div>
         </div>
       </div>

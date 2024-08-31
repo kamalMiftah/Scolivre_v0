@@ -228,7 +228,7 @@ class Form extends React.Component {
           <div className="mb-3">
             <input
               className={`form-control form-control-22 ${this.state.errors["phone"] && "incorrect"}`}
-              type="text"
+              type="tel"
               id="phone"
               name="phone"
               value={this.state.phone}
@@ -239,12 +239,13 @@ class Form extends React.Component {
                   : "Numéro de téléphone ＊"
               }
               required
+              inputMode="numeric"
             />
           </div>
           <div className="d-flex justify-content-between">
             <button
               onClick={this.nextformpart}
-              className="btn w-100 form-button btn-primary"
+              className="btn btn-lg w-100 form-button btn-primary"
             >
               Suivant
             </button>
@@ -330,13 +331,13 @@ class Form extends React.Component {
           <div className="d-flex justify-content-between">
             <button
               onClick={this.prevformpart}
-              className="btn w-100 form-button btn-secondary me-3"
+              className="btn btn-lg w-100 form-button btn-secondary me-3"
             >
               Retour
             </button>
             <button
               onClick={this.handleSubmit}
-              className="btn w-100 submit-button btn-primary"
+              className="btn btn-lg w-100 submit-button btn-primary"
             >
               Commander
             </button>
