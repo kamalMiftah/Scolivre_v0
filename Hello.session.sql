@@ -1,0 +1,1 @@
+delete from api_command where name = 'kamal miftah';
