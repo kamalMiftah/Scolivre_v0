@@ -63,7 +63,7 @@ function Home() {
             alt=""
             className="responsive-image sm-75 md-50 lg-25 xl-25"
           />
-          <div className="first-container shadow">
+          <div className="first-container shadow mb-4">
             <p className="form-heading mb-2 pt-3">Commandez maintenant!</p>
             <div className="form-container zigzag-top p-4 pt-3">
               <form id="my-form" className="m-2">

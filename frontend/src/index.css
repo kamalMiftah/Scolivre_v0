@@ -136,7 +136,7 @@
 .form-heading {
     color: #eef8f8;
     font-weight: 900;
-    font-size: 24px; /* Increase the font size */
+    font-size: 26px; /* Increase the font size */
     font-family: "Finger Paint", sans-serif;
 }
 
@@ -477,6 +477,9 @@
     }
     .image-2 {
         width: 70%;
+    }
+    .form-heading {
+        font-size: 22px; /* Increase the font size */
     }
 }
 
