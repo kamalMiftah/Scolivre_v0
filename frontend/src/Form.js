@@ -12,7 +12,7 @@ class Form extends React.Component {
       city: "",
       comment: "",
       file: null,
-      fileName: "Aucun fichier choisi",
+      fileName: "Types autorisés: .pdf, images ＊",
       currentStep: 1,
       errors: {},
     };
@@ -27,10 +27,13 @@ class Form extends React.Component {
 
   handleFileChange = (event) => {
     const file = event.target.files[0];
+    const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
     if (file.size > 10 * 1024 * 1024) {
       this.setState({
         errors: { file: "Taille Max: 10 Mo ⚠" },
       });
+    } else if (!allowedTypes.includes(file.type)) {
+      this.setState({ errors: { file: "Types autorisés: .pdf, images ⚠" } });
     } else {
       this.setState({
         file: file,
@@ -56,7 +59,7 @@ class Form extends React.Component {
       city: "",
       comment: "",
       file: null,
-      fileName: "Aucun fichier choisi",
+      fileName: "Types autorisés: .pdf, images ＊",
       currentStep: 1,
       errors: {},
     });
@@ -174,14 +177,27 @@ class Form extends React.Component {
       };
 
       fetch(`${API_BASE_URL}/api/commands/`, models_options)
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
-
-      // Update state as needed
-      this.setState({
-        currentStep: 3,
-      });
+        .then((response) => {
+          if (!response.ok) {
+            // If the response is not ok, throw an error to be caught in the catch block
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((response) => {
+          // console.log(response);
+          // Update state to step 3 on success
+          this.setState({
+            currentStep: 3,
+          });
+        })
+        .catch((err) => {
+          // console.error(err);
+          // Update state to step 4 on error
+          this.setState({
+            currentStep: 4,
+          });
+        });
     };
 
     if (this.state.currentStep === 2) {
@@ -316,7 +332,7 @@ class Form extends React.Component {
               >
                 {this.state.errors["file"]
                   ? this.state.errors["file"]
-                  : this.state.fileName + " ＊"}
+                  : this.state.fileName}
               </label>
               <input
                 type="file"
@@ -324,7 +340,7 @@ class Form extends React.Component {
                 id="file"
                 name="file"
                 onChange={this.handleFileChange}
-                accept=".pdf, image/*"
+                accept=".jpg, .jpeg, .png, .pdf"
               />
             </div>
           </div>
@@ -363,6 +379,28 @@ class Form extends React.Component {
             className="btn w-100 form-button btn-primary"
           >
             Terminer
+          </button>
+        </div>
+      );
+    } else if (this.state.currentStep === 4) {
+      return (
+        <div className="form-content py-3">
+          <div className="alert alert-danger" role="alert">
+            <div className="d-flex gap-4">
+              <span>
+                <i className="fa-solid fa-circle-exclamation icon-danger"></i>
+              </span>
+              <div>
+                Une erreur est survenue lors de l'envoi de votre commande.
+                Veuillez réessayer plus tard.
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={this.handleBack}
+            className="btn w-100 form-button btn-primary"
+          >
+            Retour
           </button>
         </div>
       );
