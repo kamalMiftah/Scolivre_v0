@@ -26,7 +26,7 @@
             }
 
             .email-header {
-                background-color: #1a73e8;
+                background-color: #dd72a6;
                 color: white;
                 padding: 20px;
                 text-align: center;
@@ -51,7 +51,7 @@
             .section-title {
                 font-size: 18px;
                 font-weight: 600;
-                color: #1a73e8;
+                color: #3fb7b7;
                 margin-bottom: 15px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid #e0e0e0;
@@ -69,7 +69,7 @@
             .detail-label {
                 font-weight: 500;
                 width: 40%;
-                color: #555;
+                color: #dd72a6;
             }
 
             .detail-value {
@@ -77,10 +77,11 @@
             }
 
             .comment-section {
-                background-color: #f5f8ff;
+                background-color: rgba(63, 183, 183, 0.1);
                 padding: 15px;
                 border-radius: 6px;
                 margin-bottom: 25px;
+                border-left: 4px solid #3fb7b7;
             }
 
             .comment-text {
@@ -88,15 +89,14 @@
                 color: #555;
             }
 
-            .image-section {
+            .file-section {
                 margin-top: 20px;
             }
 
-            .order-image {
-                max-width: 100%;
-                height: auto;
-                border-radius: 6px;
-                border: 1px solid #e0e0e0;
+            .file-link {
+                color: #3fb7b7;
+                text-decoration: underline;
+                word-break: break-all;
             }
 
             .email-footer {
@@ -105,6 +105,7 @@
                 text-align: center;
                 font-size: 13px;
                 color: #666;
+                border-top: 3px solid #3fb7b7;
             }
 
             @media only screen and (max-width: 480px) {
@@ -161,13 +162,9 @@
                     <div class="comment-text">"{{ comment }}"</div>
                 </div>
                 {% endif %} {% if image %}
-                <div class="image-section">
-                    <h2 class="section-title">Image de la Commande</h2>
-                    <img
-                        src="{{ image }}"
-                        alt="Image de la commande"
-                        class="order-image"
-                    />
+                <div class="file-section">
+                    <h2 class="section-title">Fichier de la Commande</h2>
+                    <a href="{{ image }}" class="file-link">{{ image }}</a>
                 </div>
                 {% endif %}
             </div>

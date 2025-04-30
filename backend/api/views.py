@@ -51,7 +51,7 @@ class CommandViewSet(viewsets.ModelViewSet):
             'phone_number': command.phone_number,
             'city': command.city,
             'address': command.home_address,
-            'image': f"http://scolivre.com{command.image.url}" if command.image else "",
+            'image': f"https://scolivre.com{command.image.url}" if command.image else "",
             'comment': command.comment_client,
             'current_date': current_date
         }
