@@ -37,37 +37,55 @@ class CommandViewSet(viewsets.ModelViewSet):
         if self.request and self.request.method == 'POST':
             return []  # Skip authentication for POST requests
         return [JWTAuthentication()]  # Use JWT authentication for other requests
-    
+
     def perform_create(self, serializer):
         command = serializer.save()
 
-        # Prepare email details
+        # Format the date in a more readable way
+        from datetime import datetime
+        current_date = datetime.now().strftime("%d %B %Y, %H:%M")
+
+        # Prepare context for the email template
         context = {
             'name': command.name,
             'phone_number': command.phone_number,
             'city': command.city,
             'address': command.home_address,
-            'image': f"http://scolivre.com{command.image.url}",
-            'comment_client': command.comment_client,
+            'image': f"http://scolivre.com{command.image.url}" if command.image else "",
+            'comment': command.comment_client,
+            'current_date': current_date
         }
 
-        receiver_email = 'kamalmiftah42@gmail.com'
-        template_name = 'email.html'  # Correct path to the template
-        convert_to_html_content = render_to_string(
-            template_name=template_name,
-            context=context
-        )
-        plain_message = strip_tags(convert_to_html_content)
+        # Render the HTML template with context
+        html_content = render_to_string('email_template.html', context)
 
-        yo_send_it = send_mail(
-            subject="New Command Received",
-            message=plain_message,
+        # Create plain text version
+        plain_text = f"""
+    NOUVELLE COMMANDE REÇUE
+    {current_date}
+
+    DÉTAILS DU CLIENT:
+    Nom: {context['name']}
+    Téléphone: {context['phone_number']}
+    Ville: {context['city']}
+    Adresse: {context['address']}
+    """
+        if context['comment']:
+            plain_text += f"\nCOMMENTAIRE DU CLIENT:\n{context['comment']}\n"
+        if context['image']:
+            plain_text += f"\nIMAGE DE LA COMMANDE:\n{context['image']}\n"
+
+        plain_text += "\n© 2025 Scolivre. Tous droits réservés."
+
+        # Send the email
+        send_mail(
+            subject="Nouvelle Commande Scolivre",
+            message=plain_text,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[receiver_email,],
-            html_message=convert_to_html_content,
-            fail_silently=True    # Optional
+            recipient_list=['invokersefeiba@gmail.com'],
+            html_message=html_content,
+            fail_silently=False
         )
-
 
 
 
