@@ -347,9 +347,9 @@ function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+212719871193" className="text-white">
+                  <a href="tel:+212708877515" className="text-white">
                     <i className="fas fa-phone fa-fw fa-sm me-2"></i>
-                    +212 719-871193
+                    +212 708-877515
                   </a>
                 </li>
               </ul>
@@ -392,7 +392,7 @@ function Home() {
       </footer>
 
       <FloatingWhatsApp
-        phoneNumber=" + 212 719-871193" // Replace with your WhatsApp number
+        phoneNumber=" + 212 708-877515" // Replace with your WhatsApp number
         accountName="Scolivre" // Your account name or business name
         allowClickAway
         notification
