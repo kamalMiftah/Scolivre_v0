@@ -4,7 +4,7 @@ module.exports = {
       name: "scolivre-backend",
       script: "manage.py",
       args: "runserver 127.0.0.1:8000",
-      interpreter: "python",
+      interpreter: "/var/www/Scolivre_v0/backend/venv/bin/python",
       env: {
         NODE_ENV: "development",
         DJANGO_SETTINGS_MODULE: "backend.settings",
@@ -15,14 +15,21 @@ module.exports = {
         DJANGO_SETTINGS_MODULE: "backend.settings",
       },
       watch: false,
-      ignore_watch: ["node_modules", "logs", "__pycache__", "*.pyc", "migrations", "venv"],
+      ignore_watch: [
+        "node_modules",
+        "logs",
+        "__pycache__",
+        "*.pyc",
+        "migrations",
+        "venv",
+      ],
       max_memory_restart: "3G",
       error_file: "logs/backend-error.log",
       out_file: "logs/backend-out.log",
       log_date_format: "YYYY-MM-DD HH:mm:ss",
-      instances: "max",
-      exec_mode: "cluster",
+      instances: 1,
+      exec_mode: "fork",
       autorestart: true,
-    }
-  ]
+    },
+  ],
 };
