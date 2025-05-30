@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'api.middleware.CsrfExemptMiddleware',
+    'api.middleware.csrf_exempt.DisableCSRF',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -197,6 +197,12 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
 ]
+
+# Additional CSRF settings
+CSRF_COOKIE_SECURE = True  # Only send cookie over HTTPS
+CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript to access the cookie
+CSRF_USE_SESSIONS = False  # Store CSRF token in cookie, not in session
+CSRF_COOKIE_SAMESITE = 'Lax'  # Restricts how cookies are sent with requests from external sites
 
 CORS_ALLOW_ALL_ORIGINS = True
 
