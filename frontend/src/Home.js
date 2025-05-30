@@ -339,11 +339,11 @@ function Home() {
               <ul className="list-unstyled">
                 <li>
                   <a
-                    href="mailto:scolivremaroc@gmail.com"
+                    href="mailto:scolivremaroc6@gmail.com"
                     className="text-white"
                   >
                     <i className="fas fa-at fa-fw fa-sm me-2"></i>
-                    scolivremaroc@gmail.com
+                    scolivremaroc6@gmail.com
                   </a>
                 </li>
                 <li>
@@ -369,14 +369,14 @@ function Home() {
           </a>
           <a
             className="btn btn-outline-light btn-floating m-1"
-            href="mailto:scolivremaroc@gmail.com"
+            href="mailto:scolivremaroc6@gmail.com"
             role="button"
           >
             <i className="fa-solid fa-envelope"></i>
           </a>
           <a
             className="btn btn-outline-light btn-floating m-1"
-            href="tel:+212719871193"
+            href="tel:+212708877515"
             role="button"
           >
             <i className="fa-solid fa-phone"></i>
