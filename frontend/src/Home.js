@@ -387,7 +387,7 @@ function Home() {
           className="text-center p-3"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          © 2024 Copyright: <a className="text-white">scolivre.com</a>
+          © 2025 Copyright: <a className="text-white">scolivre.com</a>
         </div>
       </footer>
 
