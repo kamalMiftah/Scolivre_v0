@@ -18,6 +18,7 @@ router.register(r'users', UserViewSet)
 
 
 urlpatterns = [
+    # Original API URLs
     path('', include(router.urls)),
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path("schema/docs/", SpectacularSwaggerView.as_view(url_name="schema")),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('token/verify/', csrf_exempt(TokenVerifyView.as_view()), name='token_verify'),
     
     # Handle duplicate api prefix (for frontend compatibility)
+    path('api/', include(router.urls)),  # Include router URLs with api/ prefix
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair_duplicate'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh_duplicate'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify_duplicate'),
