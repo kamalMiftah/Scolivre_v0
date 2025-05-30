@@ -7,13 +7,12 @@ module.exports = {
       cwd: "./",
       env: {
         NODE_ENV: "development",
-        // Suppress Node.js warnings
+        PORT: 3000, // Ensure port is set
         NODE_NO_WARNINGS: "1",
-        // Alternative: suppress specific warnings
-        // NODE_OPTIONS: "--no-warnings --no-deprecation"
       },
       env_production: {
         NODE_ENV: "production",
+        PORT: 3000,
         NODE_NO_WARNINGS: "1",
       },
       watch: true,
@@ -22,17 +21,17 @@ module.exports = {
       error_file: "logs/frontend-error.log",
       out_file: "logs/frontend-out.log",
       log_date_format: "YYYY-MM-DD HH:mm:ss",
-      instances: "max",
-      exec_mode: "cluster",
-      autorestart: false, // Disable automatic restarts
-      // Alternative: limit restart attempts
-      // max_restarts: 5,
-      // min_uptime: "10s",
-
-      // Additional options to handle warnings gracefully
-      kill_timeout: 5000,
-      listen_timeout: 3000,
+      instances: 1, // Start with single instance first
+      exec_mode: "fork", // Use fork mode instead of cluster
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: "10s",
       restart_delay: 4000,
+
+      // Handle process gracefully
+      kill_timeout: 5000,
+      listen_timeout: 8000,
+      wait_ready: true,
     },
   ],
 };
