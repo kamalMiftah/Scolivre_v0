@@ -4,7 +4,20 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import User, UserProfile, Command
 
 
-admin.site.register(Command)
+class CommandAdmin(admin.ModelAdmin):
+    list_display = ('command_id', 'name', 'phone_number', 'city', 'uploaded_at', 'order_state')
+    list_filter = ('order_state', 'city', 'uploaded_at')
+    search_fields = ('command_id', 'name', 'phone_number', 'comment_client')
+    readonly_fields = ('command_id', 'uploaded_at')
+    fieldsets = (
+        ('Client Information', {'fields': ('command_id', 'name', 'phone_number')}),
+        ('Address', {'fields': ('home_address', 'city')}),
+        ('Order Details', {'fields': ('image', 'uploaded_at', 'order_state')}),
+        ('Comments', {'fields': ('comment_client', 'comment_admin')}),
+    )
+
+
+admin.site.register(Command, CommandAdmin)
 
 
 class UserProfileInline(admin.StackedInline):

@@ -50,7 +50,7 @@ class Command(models.Model):
     ]
     order_state = models.CharField(max_length=10, choices=ORDER_STATE_CHOICES, default='PENDING')
     
-    comment_client = models.TextField(blank=True, null=True)
+    comment_client = models.TextField(blank=True, null=False, default="")
     comment_admin = models.TextField(blank=True, null=True)
     
     def clean(self):
