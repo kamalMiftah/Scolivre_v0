@@ -54,7 +54,7 @@ const Header = () => {
           className="d-lg-none"
           onClick={() => showMobilemenu()}
         >
-          } ><i className="bi bi-list"></i>
+          <i className="bi bi-list"></i>
         </Button>
       </div>
       <div className="hstack gap-2">

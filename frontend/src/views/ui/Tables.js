@@ -94,6 +94,7 @@ const Tables = () => {
     formData.append("city", selectedClient.city);
     formData.append("home_address", selectedClient.home_address);
     formData.append("comment_client", selectedClient.comment_client);
+    formData.append("comment_admin", selectedClient.comment_admin);
     formData.append("order_state", selectedClient.order_state);
     if (selectedFile) {
       formData.append("image", selectedFile);
