@@ -42,16 +42,16 @@ class CommandViewSet(viewsets.ModelViewSet):
         # Check all possible comment field names
         comment = self.request.data.get('comment', '')
         comment_client = self.request.data.get('comment_client', '')
-        
+
         # Use whichever comment field has data
         final_comment = comment_client if comment_client else comment
-        
+
         # Print debugging information
         print(f"DEBUG - Request data: {self.request.data}")
         print(f"DEBUG - Comment field: '{comment}'")
         print(f"DEBUG - Comment client field: '{comment_client}'")
         print(f"DEBUG - Final comment being saved: '{final_comment}'")
-        
+
         # Save with the comment field explicitly provided
         command = serializer.save(comment_client=final_comment)
 
@@ -69,7 +69,7 @@ class CommandViewSet(viewsets.ModelViewSet):
             'comment': command.comment_client,
             'current_date': current_date
         }
-        
+
         # Print final model data to debug
         print(f"DEBUG - Final saved command object: Name={command.name}, Comment={command.comment_client}")
 
@@ -99,7 +99,7 @@ class CommandViewSet(viewsets.ModelViewSet):
             subject="Nouvelle Commande Scolivre",
             message=plain_text,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=['invokersefeiba@gmail.com'],
+            recipient_list=['scolivremaroc6@gmail.com'],
             html_message=html_content,
             fail_silently=False
         )
